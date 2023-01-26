@@ -1,0 +1,26 @@
+.DevicePhotoSection{
+    width: 650px;
+    height: 800px;
+}
+
+.photoList{
+    height: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.mainPhoto{
+    width: 450px;
+    height: 600px;
+    /*background-color: aqua;*/
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+.photo{
+    width: 125px;
+    height: 165px;
+    object-fit: cover;
+    /*background-color: #CAB362;*/
+}

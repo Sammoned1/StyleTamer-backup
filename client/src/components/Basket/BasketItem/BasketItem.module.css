@@ -1,0 +1,81 @@
+.basketItem {
+    width: 960px;
+    height: 240px;
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0;
+}
+
+.basketItemPhoto {
+    height: 100%;
+    width: 194px;
+    object-fit: cover;
+}
+
+.basketItemContent {
+    width: 680px;
+    height: 100%;
+}
+
+.basketItemCount {
+    width: 205px;
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    background-color: #252525;
+    border-radius: 15px;
+    text-align: center;
+    line-height: 45px;
+    font-size: 20px;
+}
+
+.basketCountLine {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.basketCountIcon {
+    height: 45px;
+    width: 45px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.basketItemTotal {
+    font-size: 25px;
+    line-height: 45px;
+    margin-right: 30px;
+    display: flex;
+}
+
+.rubleIcon {
+    margin-left: 10px;
+}
+
+.basketItemTitle {
+    font-size: 25px;
+    font-weight: bold;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 10px;
+}
+
+.basketItemSize, .basketItemPrice {
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+}
+
+.basketItemCountInput {
+    width: 100%;
+}
+
+.deleteItemBtn {
+    height: 24px;
+    width: 24px;
+    background: url("../../../images/icons/cross.png") 50% 50%/cover no-repeat;
+    margin-right: 30px;
+    cursor: pointer;
+}

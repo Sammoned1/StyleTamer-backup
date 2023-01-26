@@ -1,0 +1,13 @@
+.profileRow{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    margin: 20px 0;
+}
+
+.profileTitle{
+    font-size: 22px;
+    color: white;
+    width: 200px;
+}

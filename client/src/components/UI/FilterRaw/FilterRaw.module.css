@@ -1,0 +1,58 @@
+.filterRaw{
+    height: 60px;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    cursor: pointer;
+}
+
+.filterRawText{
+    height: 100%;
+    width: max-content;
+    margin-left: 15px;
+    font-size: 20px;
+    color: white;
+    line-height: 60px;
+    position: relative;
+    user-select: none;
+}
+
+.filterRawIcon{
+    height: 20px;
+    width: 30px;
+    margin: 0 20px;
+}
+
+.rightImage{
+    background: url("../../../images/icons/filterIcons/right-arrow.png") 50% 50%/ contain no-repeat;
+    width: 22px;
+}
+
+.clicked .filterRawText::after{
+    content: '';
+    color: white;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    height: 2px;
+    background-color: #fff;
+    animation: lineAnimation 0.4s forwards;
+}
+
+.expandFilterArrow{
+    opacity: 0;
+    transition: all 0.2s ease-in;
+}
+
+.filterRaw:hover .expandFilterArrow{
+    opacity: 1;
+}
+
+@keyframes lineAnimation {
+    from{
+        width: 0;
+    }
+    to{
+        width: 100%;
+    }
+}

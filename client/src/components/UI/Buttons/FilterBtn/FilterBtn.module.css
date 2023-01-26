@@ -1,0 +1,24 @@
+.filterText{
+    width: 132px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.filterIcon{
+    width: 18px;
+    height: 18px;
+    background: url("../../../../images/icons/free-icon-arrow-down-sign-to-navigate-32195.png") 100% 100% / cover no-repeat;
+    cursor: pointer;
+}
+
+.filterBtn{
+    cursor: pointer;
+    width: 184px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-family: 'Montserrat', 'sans-serif';
+}

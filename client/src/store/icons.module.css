@@ -1,0 +1,35 @@
+.woman {
+    background: url("../images/icons/filterIcons/womanIcon32.png") 50% 50%/ contain no-repeat;
+}
+
+.man {
+    background: url("../images/icons/filterIcons/bussiness-man.png") 50% 50%/ contain no-repeat;
+}
+
+.brands {
+    background: url("../images/icons/filterIcons/brandIcon.png") 50% 50% / contain no-repeat;
+}
+
+.clothes {
+    background: url("../images/icons/filterIcons/clothesIcon.png") 50% 50% /contain no-repeat;
+}
+
+.boots {
+    background: url("../images/icons/filterIcons/bootsIcon.png") 50% 50% /contain no-repeat;
+}
+
+.bags {
+    background: url("../images/icons/filterIcons/bagsIcon.png") 50% 50% /contain no-repeat;
+}
+
+.jewellery {
+    background: url("../images/icons/filterIcons/jewelleryIcon.png") 50% 50% /contain no-repeat;
+}
+
+.nike {
+    background: url("../images/icons/filterIcons/nike.png") 50% 50% /contain no-repeat;
+}
+
+.adidas {
+    background: url("../images/icons/filterIcons/adidas.png") 50% 50% /contain no-repeat;
+}

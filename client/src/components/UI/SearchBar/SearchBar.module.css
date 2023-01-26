@@ -1,0 +1,34 @@
+.searchBar {
+    background-color: #fff;
+    height: 32px;
+    width: 600px;
+    border-radius: 100px;
+    padding: 0 60px 0 18px;
+    font-size: 20px;
+    position: relative;
+
+}
+
+.searchInput {
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+}
+
+.searchIcon {
+    content: '';
+    height: 100%;
+    width: 22px;
+    position: absolute;
+    /*top: 5px;*/
+    bottom: 0;
+    right: 15px;
+    background: url("../../../images/icons/лупа.png") 50% 50% /contain no-repeat;
+    cursor: pointer;
+}
+
+input::-webkit-input-placeholder {
+    color: #838383;
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+}

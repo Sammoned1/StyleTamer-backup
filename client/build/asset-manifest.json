@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/StyleTamer/static/css/main.93d8fa09.css",
+    "main.js": "/StyleTamer/static/js/main.3fd164e7.js",
+    "static/media/woman3 1.jpg": "/StyleTamer/static/media/woman3 1.8c549fa75fa6adfc1119.jpg",
+    "static/media/man4.jpeg": "/StyleTamer/static/media/man4.4c316c7d26d28bfb11c2.jpeg",
+    "static/media/StyleTamerHeader.jpg": "/StyleTamer/static/media/StyleTamerHeader.b9b328acef5dfe455e9d.jpg",
+    "index.html": "/StyleTamer/index.html",
+    "main.93d8fa09.css.map": "/StyleTamer/static/css/main.93d8fa09.css.map",
+    "main.3fd164e7.js.map": "/StyleTamer/static/js/main.3fd164e7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.93d8fa09.css",
+    "static/js/main.3fd164e7.js"
+  ]
+}

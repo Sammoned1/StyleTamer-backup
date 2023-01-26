@@ -1,0 +1,92 @@
+.priceFilter{
+    width: 100%;
+    max-width: 400px;
+    height: 120px;
+}
+
+.priceFilterText{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    width: 100%;
+    max-width: 400px;
+    height: 60px;
+    padding-left: 24px;
+    line-height: 60px;
+    user-select: none;
+}
+.priceFilterLine{
+    height: 60px;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.priceBlock{
+    height: 60px;
+    /*width: 60px;*/
+    margin: 0 15px;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    line-height: 60px;
+}
+
+.priceFilterRange{
+    width: 190px;
+    display: flex;
+    align-items: center;
+}
+
+.priceFilterRange input{
+    width: 200px;
+}
+
+hr{
+    background-color: #535353;
+    height: 2px;
+    margin: 0 10px;
+}
+
+.priceInput {
+    width: 70px;
+    font-family: 'Montserrat', 'sans-serif';
+    font-size: 16px;
+}
+
+/********************************************************/
+/********************************************************/
+/********************************************************/
+
+input[class=priceRange]  {
+    width: 200px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+input[class=priceRange]::-webkit-slider-runnable-track {
+    border-radius: 5px;
+    height: 2px;
+    background-color: #838383;
+}
+input[class=priceRange]::-webkit-slider-thumb {
+    background: #D9D9D9;
+    border-radius: 50%;
+    cursor: pointer;
+    width:15px;
+    height: 15px;
+    -webkit-appearance: none;
+    margin-top: -6px;
+}
+
+input[class=priceRange]::-moz-range-track {
+    border-radius: 5px;
+    height: 2px;
+    background-color: #838383;
+}
+input[class=priceRange]::-moz-range-thumb {
+    background: #D9D9D9;
+    border-radius: 50%;
+    cursor: pointer;
+}

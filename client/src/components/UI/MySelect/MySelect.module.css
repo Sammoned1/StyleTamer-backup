@@ -1,0 +1,17 @@
+.mySelect{
+    background-color: white;
+    border-radius: 25px;
+    height: auto;
+    line-height: 46px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    overflow: hidden;
+    user-select: none;
+    margin: 15px 0;
+}
+
+.active{
+    border-bottom: 1px solid #252525;
+}
+

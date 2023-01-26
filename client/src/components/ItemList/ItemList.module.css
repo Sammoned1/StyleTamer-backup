@@ -1,0 +1,13 @@
+.listPage{
+    width: 1600px;
+    margin: 0 auto;
+    font-family: 'Montserrat', 'sans-serif';
+}
+
+.list{
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, min-content);
+    gap: 60px;
+    justify-content: center;
+}

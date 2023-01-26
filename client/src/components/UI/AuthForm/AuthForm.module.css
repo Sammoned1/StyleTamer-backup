@@ -1,0 +1,72 @@
+.authPage{
+    background-color: #252525;
+    width: 500px;
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    align-items: center;
+    margin: 50px auto;
+    position: relative;
+    font-family: 'Montserrat', 'sans-serif';
+    transition: height 0.4s ease;
+}
+
+.authForm{
+    width: 100%;
+    height: 100%;
+}
+
+.authPage.registration{
+    height: 540px;
+}
+
+.title{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 30px;
+    color: white;
+    margin: 40px 0 40px 0;
+
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.authIcon{
+    height: 46px;
+    width: 38px;
+    margin: auto 25px;
+}
+
+.emailIcon{
+    background: url('../../../images/icons/белая почта.png') 50% 50% / contain no-repeat;
+}
+
+.passwordIcon{
+    background: url('../../../images/icons/белый ключ.png') 50% 50% / contain no-repeat;
+}
+
+.eyeIcon{
+    background: url('../../../images/icons/закрытый глаз.png') 50% 50% / contain no-repeat;
+    cursor: pointer;
+}
+
+.eyeIcon.active{
+    background: url('../../../images/icons/открытый глаз.png') 50% 50% / contain no-repeat;
+}
+
+.authText{
+    font-size: 18px;
+    text-align: center;
+    color: white;
+}
+
+.toRegistration{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 35px;
+}

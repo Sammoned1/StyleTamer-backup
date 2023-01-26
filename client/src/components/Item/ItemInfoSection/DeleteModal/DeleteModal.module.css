@@ -1,0 +1,52 @@
+.modal{
+    position: fixed;
+    /*pointer-events: none;*/
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.2);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*opacity: 0;*/
+    /*overflow-y: hidden;*/
+}
+
+.modalContent{
+    position: fixed;
+    background-color: white;
+    width: 400px;
+    height: 160px;
+    border-radius: 25px;
+    padding: 20px;
+}
+
+.delText{
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.delBtnsContainer{
+    pointer-events: all;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.delBtn{
+    margin-top: 10px;
+    height: 30px;
+    width: 150px;
+    color: white;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #535353;
+    cursor: pointer;
+    transform: scale(1);
+}
+
+.delBtn:active{
+    transform: scale(1.01);
+}

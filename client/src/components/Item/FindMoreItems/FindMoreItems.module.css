@@ -1,0 +1,23 @@
+.item{
+    min-width: 300px;
+    max-width: 300px;
+    height: 460px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 0 20px;
+}
+
+.findMoreItemsText{
+    font-size: 25px;
+    color: black;
+    text-align: center;
+    background-color: #eaeaea;
+    height: min-content;
+    width: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    user-select: none;
+    font-family: 'Montserrat', 'sans-serif';
+}

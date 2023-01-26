@@ -1,0 +1,9 @@
+.toolBar{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: 'Montserrat', serif;
+    margin-bottom: 20px;
+}
+

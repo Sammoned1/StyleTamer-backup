@@ -1,0 +1,39 @@
+*{
+    font-family: Montserrat, sans-serif;
+}
+
+.adminModal{
+    height: min-content;
+    width: 600px;
+    background-color: #252525;
+    border-radius: 35px;
+    padding: 20px 40px;
+}
+
+.addTitle{
+    font-size: 22px;
+    color: white;
+    margin: 35px 0 15px 0;
+}
+
+.adminTitle{
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.add{
+    display: flex;
+}
+
+.alert{
+    font-size: 20px;
+    color: #E73535;
+}
+
+.createItemSection{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}

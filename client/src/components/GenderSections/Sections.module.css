@@ -1,0 +1,38 @@
+.woman{
+    background: url("../../images/sectionImages/woman3 1.jpg") 50% 50% / cover no-repeat;
+    margin-right: 34px;
+}
+.man{
+    background: url("../../images/sectionImages/man4.jpeg") 50% 50% / cover no-repeat;
+    margin-left: 34px;
+}
+
+.section{
+    height: 700px;
+    width: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s;
+    transform: scale(1);
+    cursor: pointer;
+}
+
+.sections{
+    display: flex;
+    justify-content: center;
+}
+
+.sectionText{
+    display: block;
+    color: white;
+    font-size: 60px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    font-family: Montserrat, sans-serif;
+    user-select: none;
+}
+
+.section:hover{
+    transform: scale(1.01);
+}

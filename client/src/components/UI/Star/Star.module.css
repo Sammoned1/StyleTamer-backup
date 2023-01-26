@@ -1,0 +1,13 @@
+.star{
+    height: 25px;
+    width: 25px;
+    background: url("../../../images/icons/Star.png") center center /cover no-repeat;
+}
+
+.black{
+    background: url("../../../images/icons/BlackStar.png") center center /cover no-repeat;
+}
+
+.golden{
+    background: url("../../../images/icons/GoldenStar.png") center center /cover no-repeat;
+}

@@ -17,7 +17,7 @@ const Boots = () => {
             <div style={{minHeight: '100vh'}}>
                 <ItemList title={'Обувь'}/>
             </div>
-            {pagesAmount > 1 ? <Pages/> : null}
+            {/*{pagesAmount > 1 ? <Pages/> : null}*/}
             {/*проверка гита*/}
             {/*Второй коммент*/}
             <Footer/>

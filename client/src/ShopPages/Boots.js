@@ -18,6 +18,7 @@ const Boots = () => {
                 <ItemList title={'Обувь'}/>
             </div>
             {pagesAmount > 1 ? <Pages/> : null}
+            {/*Второй коммент*/}
             <Footer/>
         </div>
     );

@@ -16,6 +16,12 @@ const WomanCollection = observer(() => {
         device.setPage(1)
     }, [])
 
+    useEffect(() => {
+        window.scrollTo({
+            top: 0
+        })
+    }, [])
+
     return (
         <div>
             <div style={{minHeight: '100vh'}}>

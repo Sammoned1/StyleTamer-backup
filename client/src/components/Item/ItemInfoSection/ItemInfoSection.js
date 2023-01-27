@@ -10,8 +10,9 @@ import DeleteModal from "./DeleteModal/DeleteModal";
 import {removeDevice} from "../../../http/deviceAPI";
 import {useNavigate} from "react-router-dom";
 import {CATALOGUE_ROUTE, SHOP_ROUTE} from "../../../utils/consts";
+import {observer} from "mobx-react-lite";
 
-const ItemInfoSection = (device) => {
+const ItemInfoSection = observer((device) => {
     const navigate = useNavigate()
     const TOKEN = localStorage.getItem('token')
     const USER = TOKEN ? jwt_decode(TOKEN) : null
@@ -84,6 +85,6 @@ const ItemInfoSection = (device) => {
                 : null}
         </div>
     );
-};
+});
 
 export default ItemInfoSection;

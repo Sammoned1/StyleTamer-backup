@@ -4,7 +4,7 @@ import TopAppBar from "./components/NavBar/TopAppBar/TopAppBar";
 import ToolBar from "./components/NavBar/ToolBar/ToolBar";
 import {Spinner} from "react-bootstrap";
 import {observer} from "mobx-react-lite";
-import {useContext, useEffect, useState} from "react";
+import {useContext, useEffect, useRef, useState} from "react";
 import {Context} from "./index";
 import {check} from "./http/userAPI";
 import './styles/style.css'
@@ -23,18 +23,25 @@ const App = observer(() => {
         useEffect(() => {
             fetchTypes().then(data => device.setTypes(data))
             fetchBrands().then(data => device.setBrands(data))
-            fetchDevices(null, null, null, null, 30).then(data => {
+            fetchDevices(null, null, null, null, 16).then(data => {
                 device.setDevices(data.rows)
                 device.setTotalCount(data.count)
             })
         }, [])
 
         useEffect(() => {
-            fetchDevices(device.type, null, null, device.gender, 30).then(data => {
+            fetchDevices(device.type, null, device.page, device.gender, 16).then(data => {
                 device.setDevices(data.rows)
                 device.setTotalCount(data.count)
             })
-        }, [device.gender, device.type])
+        }, [device.gender, device.type, device.page])
+
+
+        useEffect(() => {
+            window.scrollTo({
+                top: 0
+            })
+        }, [device.page])
 
         useEffect(() => {
             setTimeout(() => {

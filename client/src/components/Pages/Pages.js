@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {Context} from "../../index";
 import Page from "./Page/Page";
 import classes from './Pages.module.css'
@@ -13,15 +13,31 @@ const Pages = observer(() => {
         pages.push(i + 1)
     }
 
+    const increasePage = () => {
+        if (device.page < pageCount) {
+            device.setPage(device.page + 1)
+        }
+    }
+
+    const decreasePage = () => {
+        if (device.page > 1) {
+            device.setPage(device.page - 1)
+        }
+    }
+
     return (
         <div className={classes.pagesInitialContainer}>
-            <div className={classes.pageBtn}><div className={classes.leftPageBtn}></div></div>
+            <div className={classes.pageBtn} onClick={() => decreasePage()}>
+                <div className={classes.leftPageBtn}></div>
+            </div>
             <div className={classes.pagesBlock}>
                 {pages.map(page => (
                     <Page key={page} page={page}/>
                 ))}
             </div>
-            <div className={classes.pageBtn}><div className={classes.rightPageBtn}></div></div>
+            <div className={classes.pageBtn} onClick={() => increasePage()}>
+                <div className={classes.rightPageBtn}></div>
+            </div>
         </div>
     );
 });

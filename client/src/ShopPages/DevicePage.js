@@ -22,6 +22,12 @@ const DevicePage = observer(() => {
         fetchOneDevice(id).then(data => setSelectedDevice(data))
     }, [])
 
+    useEffect(() => {
+        window.scrollTo({
+            top: 0
+        })
+    }, [])
+
     return (
         <div>
             <div style={{
@@ -39,12 +45,12 @@ const DevicePage = observer(() => {
                 <ItemDescription/>
                 <Reviews/>
             </div>
-            <Slider title={'С этим также берут'}>
-                {device.devices.map((e)=>
-                    <Item key={e.id} device={e}/>
-                )}
-                {/*<FindMoreItems title={'Больше похожих товаров'}/>*/}
-            </Slider>
+            {/*<Slider title={'С этим также берут'}>*/}
+            {/*    {device.devices.map((e)=>*/}
+            {/*        <Item key={e.id} device={e}/>*/}
+            {/*    )}*/}
+            {/*    /!*<FindMoreItems title={'Больше похожих товаров'}/>*!/*/}
+            {/*</Slider>*/}
             <Footer/>
         </div>
     );

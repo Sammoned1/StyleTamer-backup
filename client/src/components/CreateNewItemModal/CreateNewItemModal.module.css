@@ -39,6 +39,13 @@
     justify-content: space-evenly;
 }
 
+/*#file-upload-button{*/
+/*    opacity: 0;*/
+/*}*/
+input[type='file']{
+    display: none;
+}
+
 /*.genderBtn{*/
 /*    background-color: white;*/
 /*    cursor: pointer;*/

@@ -13,14 +13,11 @@
     transition: filter 0.2s ease;
 }
 
-.crossBlock {
+.btnBlock {
     position: absolute;
-    top: 0;
-    right: 0;
     height: 20px;
     width: 20px;
     background: rgba(0, 0, 0, 0.4);
-    border-bottom-left-radius: 10px;
     opacity: 0;
     filter: brightness(70%);
     transition: all 0.2s ease;
@@ -29,13 +26,31 @@
     align-items: center;
 }
 
+.crossBlock{
+    top: 0;
+    right: 0;
+    border-bottom-left-radius: 10px;
+}
+
+.arrowBlock{
+    top: 0;
+    left: 0;
+    border-bottom-right-radius: 10px;
+}
+
 .cross {
     height: 10px;
     width: 10px;
     background: url("../../../images/icons/whiteCross.png") 50% 50%/contain no-repeat;
 }
 
-.crossBlock:hover{
+.arrow{
+    height: 14px;
+    width: 14px;
+    background: url("../../../images/icons/check.png") 50% 50%/contain no-repeat;
+}
+
+.crossBlock:hover, .arrowBlock:hover{
     filter: brightness(100%);
 }
 
@@ -43,7 +58,17 @@
     filter: brightness(70%);
 }
 
-.photoBlock:hover .crossBlock {
+.photoBlock:hover .crossBlock{
+    opacity: 1;
+    /*filter: brightness(100%);*/
+}
+
+.active{
+    opacity: 1;
+    filter: brightness(100%);
+}
+
+.photoBlock:hover .arrowBlock{
     opacity: 1;
     /*filter: brightness(100%);*/
 }

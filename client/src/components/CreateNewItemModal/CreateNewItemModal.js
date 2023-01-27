@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import classes from './CreateNewItemModal.module.css'
 import MySelect from "../UI/MySelect/MySelect";
 import {Context} from "../../index";
@@ -8,6 +8,7 @@ import AddPhotoInput from "../UI/Inputs/AddPhotoInput/AddPhotoInput";
 import {createDevice} from "../../http/deviceAPI";
 import AddedPhoto from "./AddedPhoto/AddedPhoto";
 import {observer} from "mobx-react-lite";
+import {forEach} from "react-bootstrap/ElementChildren";
 
 const CreateNewItemModal = observer(({callback, number}) => {
     const {device} = useContext(Context)
@@ -19,15 +20,16 @@ const CreateNewItemModal = observer(({callback, number}) => {
     const [selectedType, setSelectedType] = useState(null)
     const [selectedGender, setSelectedGender] = useState('')
     const [photos, setPhotos] = useState([])
-
-
+    const [checked, setChecked] = useState({})
 
     const selectFile = e => {
-        // setFile(e.target.files[0])
-        // setPhotos([...photos, e.target.files[0]])
-        // console.log(e.target.files)
+        // setChecked(e.target.files[0])
         setPhotos([...photos, ...e.target.files])
     }
+
+    useEffect(()=>{
+        setChecked(photos[0])
+    },[photos])
 
     const addDevice = () => {
         try {
@@ -50,7 +52,9 @@ const CreateNewItemModal = observer(({callback, number}) => {
         } catch (e) {
             alert('Ошибка при добавлении товара')
         }
+        console.log(checked)
         console.log(photos)
+        // console.log(photos[0])
     }
 
     return (
@@ -99,10 +103,13 @@ const CreateNewItemModal = observer(({callback, number}) => {
             <div className={classes.createModalText}>Выберите бренд товара</div>
             <MySelect array={device.brands} handler={setSelectedBrand}/>
             <div className={classes.createModalText}>Выберите фото товара</div>
-            <AddPhotoInput onChange={selectFile}/>
+            <AddPhotoInput onChange={selectFile} number={number}/>
+            {/*<label htmlFor={number}>файл</label>*/}
+            {/*<AddPhotoInput/>*/}
+            {/*<input type="file" id={number} onChange={selectFile} multiple/>*/}
             <div style={{marginBottom: 20}} className={classes.photoBlock}>
                 {photos.length ? photos.map((photo) =>
-                    <AddedPhoto key={photo.name} photo={photo} array={photos} setArray={setPhotos}/>
+                    <AddedPhoto key={photo.name} photo={photo} array={photos} setArray={setPhotos} checked={checked} setChecked={setChecked}/>
                 ) : null}
             </div>
             <div style={{display: 'flex'}}>

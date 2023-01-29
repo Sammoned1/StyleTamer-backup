@@ -14,7 +14,7 @@ const CreateNewItemModal = observer(({callback, number}) => {
     const {device} = useContext(Context)
     const [name, setName] = useState('')
     const [price, setPrice] = useState(0)
-    const [file, setFile] = useState(null)
+    // const [file, setFile] = useState(null)
     const [info, setInfo] = useState('')
     const [selectedBrand, setSelectedBrand] = useState(null)
     const [selectedType, setSelectedType] = useState(null)
@@ -23,7 +23,6 @@ const CreateNewItemModal = observer(({callback, number}) => {
     const [checked, setChecked] = useState({})
 
     const selectFile = e => {
-        // setChecked(e.target.files[0])
         setPhotos([...photos, ...e.target.files])
     }
 
@@ -36,25 +35,20 @@ const CreateNewItemModal = observer(({callback, number}) => {
             const formData = new FormData()
             formData.append('name', name)
             formData.append('price', `${price}`)
-            formData.append('img', photos[0])
+            photos.forEach((photo)=>{
+                formData.append(`${photo.name}`, photo)
+            })
+            formData.append('mainFile', checked.name)
             formData.append('gender', selectedGender)
             formData.append('brandId', selectedBrand.id)
             formData.append('typeId', selectedType.id)
-            // console.log(formData.keys())
             formData.append('info', info)
-            console.log(formData)
-            for (const value of formData.values()) {
-                console.log(value);
-            }
             createDevice(formData).then(data => {
                 callback(number)
             })
         } catch (e) {
             alert('Ошибка при добавлении товара')
         }
-        console.log(checked)
-        console.log(photos)
-        // console.log(photos[0])
     }
 
     return (

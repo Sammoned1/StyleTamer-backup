@@ -38,9 +38,10 @@ const CreateNewItemModal = observer(({callback, number}) => {
             formData.append('name', name)
             formData.append('price', `${price}`)
             photos.forEach((photo)=>{
-                formData.append('fileList', photo.name)
+                formData.append(`${photo.name}`, photo)
+                console.log(photo)
             })
-            formData.append('mainFile', checked.name)
+            formData.append('mainFile', checked)
             // formData.append('fileList', photos)
             formData.append('gender', selectedGender)
             formData.append('brandId', selectedBrand.id)

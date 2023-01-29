@@ -13,17 +13,22 @@ class DeviceController {
         try {
             let {name, price, brandId, typeId, info, gender, fileList, mainFile} = req.body
             // const {img} = req.files
-            fileList.forEach(file => {
-                let fileName = uuid.v4() + '.jpg' // Функция uuid.v4 генерирует рандомный айди
-                // file.mv(path.resolve(__dirname, '..', 'static', fileName))
-                if (file === mainFile){
-                    const photo = DevicePhoto.create({name: fileName, main: true, deviceId: 32})
-                }
-                else {
-                    const photo = DevicePhoto.create({name: fileName, deviceId: 32})
-                }
-            })
-            return res.json(fileList)
+            // Array.prototype.forEach.call(req.files, file => {
+            // let temp = [req.files]
+            // for (let i; i < req.files.length; i++) {
+            //     // temp.push(req.files)
+            //     temp=req.files
+            // }
+            // let fileName = uuid.v4() + '.jpg' // Функция uuid.v4 генерирует рандомный айди
+
+            // if (file.name === mainFile){
+            //     const photo = DevicePhoto.create({name: fileName, main: true, deviceId: 32})
+            // }
+            // else {
+            //     const photo = DevicePhoto.create({name: fileName, deviceId: 32})
+            // }
+            // })
+            return res.json({message: req.files.img})
             // Перемещение файла с заданным именем в нужную нам папку
             // Функция resolve адаптирует путь под операционную систему
             //

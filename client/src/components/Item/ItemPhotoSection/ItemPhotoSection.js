@@ -2,26 +2,25 @@ import React, {useEffect, useState} from 'react';
 import classes from './ItemPhotoSection.module.css'
 import {observer} from "mobx-react-lite";
 import Item from "../Item";
+import Photo from "./Photo/Photo";
 
 const ItemPhotoSection = observer(({item}) => {
     const [mainPhoto, setMainPhoto] = useState({})
     const [photoList, setPhotoList] = useState([])
 
     const changePhoto = (photo) => {
+        setPhotoList(photoList.filter(i => i.name !== photo.name))
+        setPhotoList(current => [...current, mainPhoto])
         setMainPhoto(photo)
     }
-    // let photoList= []
 
     useEffect(() => {
         if ('id' in item) {
             item.device_photos.forEach(photo => {
-                // console.log(photo.main)
                 if (photo.main) {
                     setMainPhoto(photo)
                 } else {
                     setPhotoList(current => [...current, photo])
-                    // photoList.push(photo)
-                    // console.log(photo)
                 }
             })
         }
@@ -35,10 +34,7 @@ const ItemPhotoSection = observer(({item}) => {
                 alt={'loading...'}/>
             <div className={classes.photoList}>
                 {photoList.map(photo =>
-                    // <Item/>
-                    <div className={classes.photo} key={photo.id} onClick={changePhoto}>
-                        <img src={'id' in item ? process.env.REACT_APP_API_URL + photo.name : ''} alt="loading..."/>
-                    </div>
+                    <Photo key={photo.id} photo={photo} handler={changePhoto}/>
                 )}
             </div>
         </div>

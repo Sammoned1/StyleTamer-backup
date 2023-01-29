@@ -23,18 +23,5 @@
     user-select: none;
 }
 
-.photo{
-    width: 140px;
-    height: auto;
-    object-fit: cover;
-    display: flex;
-    cursor: pointer;
-    transform: scale(1);
-    transition: transform 0.4s ease;
-    user-select: none;
-}
 
-.photo:hover{
-    transform: scale(1.1);
-}
 

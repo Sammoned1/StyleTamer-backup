@@ -79,7 +79,6 @@ const CreateNewItemModal = observer(({callback, number}) => {
                     }}
                     style={{borderTopLeftRadius: 0, borderBottomLeftRadius: 0, marginLeft: 2}}/>
             </div>
-
             {/*<div className={classes.textAreaBlock}>*/}
             {/*    <textarea*/}
             {/*        className={classes.textArea}*/}

@@ -5,6 +5,7 @@ import {Context} from "../../../index";
 import {decreaseBasketDevice, increaseBasketDevice, removeBasketDevice} from "../../../http/basketAPI";
 import jwt_decode from "jwt-decode";
 import {observer} from "mobx-react-lite";
+import data from "bootstrap/js/src/dom/data";
 
 const BasketItem = observer(({item, setTotal, total, basket, setBasket}) => {
     const [price, setPrice] = useState(0)
@@ -13,6 +14,7 @@ const BasketItem = observer(({item, setTotal, total, basket, setBasket}) => {
     const token = localStorage.getItem('token')
     const basketId = token ? jwt_decode(token).id : null
     const [count, setCount] = useState(0)
+    const [mainDevice, setMainDevice] = useState({})
 
     useEffect(() => {
         if (user.isAuth) {
@@ -22,7 +24,21 @@ const BasketItem = observer(({item, setTotal, total, basket, setBasket}) => {
                 setCount(item.count)
             })
         }
+        // console.log(device)
     }, [])
+
+
+    useEffect(() => {
+        if ('id' in device) {
+            device.device_photos.forEach(photo => {
+                if (photo.main) {
+                    setMainDevice(photo)
+                    // console.log(photo)
+                }
+            })
+        }
+        console.log(device)
+    }, [device])
 
     const increment = () => {
         increaseBasketDevice({deviceId: device.id, basketId}).then(data => {
@@ -49,7 +65,7 @@ const BasketItem = observer(({item, setTotal, total, basket, setBasket}) => {
 
     return (
         <div className={classes.basketItem}>
-            <img src={process.env.REACT_APP_API_URL + device.img} className={classes.basketItemPhoto}/>
+            <img src={process.env.REACT_APP_API_URL + mainDevice.name} className={classes.basketItemPhoto}/>
             <div className={classes.basketItemContent}>
                 <div style={{display: 'flex', justifyContent: 'space-between'}}>
                     <div className={classes.basketItemTitle}>{device.name}</div>

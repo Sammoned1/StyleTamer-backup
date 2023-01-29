@@ -5,20 +5,20 @@ import Item from "../Item";
 import Photo from "./Photo/Photo";
 
 const ItemPhotoSection = observer(({item}) => {
-    const [mainPhoto, setMainPhoto] = useState({})
+    const [mainDevice, setMainDevice] = useState({})
     const [photoList, setPhotoList] = useState([])
 
     const changePhoto = (photo) => {
         setPhotoList(photoList.filter(i => i.name !== photo.name))
-        setPhotoList(current => [...current, mainPhoto])
-        setMainPhoto(photo)
+        setPhotoList(current => [...current, mainDevice])
+        setMainDevice(photo)
     }
 
     useEffect(() => {
         if ('id' in item) {
             item.device_photos.forEach(photo => {
                 if (photo.main) {
-                    setMainPhoto(photo)
+                    setMainDevice(photo)
                 } else {
                     setPhotoList(current => [...current, photo])
                 }
@@ -29,7 +29,7 @@ const ItemPhotoSection = observer(({item}) => {
     return (
         <div className={classes.DevicePhotoSection}>
             <img
-                src={'id' in item ? process.env.REACT_APP_API_URL + mainPhoto.name : ''}
+                src={'id' in item ? process.env.REACT_APP_API_URL + mainDevice.name : ''}
                 className={classes.mainPhoto}
                 alt={'loading...'}/>
             <div className={classes.photoList}>

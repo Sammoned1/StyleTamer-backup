@@ -12,13 +12,13 @@ import {useNavigate} from "react-router-dom";
 import {CATALOGUE_ROUTE, SHOP_ROUTE} from "../../../utils/consts";
 import {observer} from "mobx-react-lite";
 
-const ItemInfoSection = observer((device) => {
+const ItemInfoSection = observer(({item}) => {
     const navigate = useNavigate()
     const TOKEN = localStorage.getItem('token')
     const USER = TOKEN ? jwt_decode(TOKEN) : null
     const basketId = USER ? USER.id : null
     const addToBasket = () => {
-        addBasketDevice({deviceId: device.device.id, basketId}).then(data => {
+        addBasketDevice({deviceId: item.id, basketId}).then(data => {
             if (data.message) {
                 alert(data.message)
             }
@@ -36,7 +36,7 @@ const ItemInfoSection = observer((device) => {
 
     const deleteDevice = ()=>{
         // console.log(device.device)
-        removeDevice(device).then(data => {
+        removeDevice(item).then(data => {
             setModalActive(false)
         })
         navigate(SHOP_ROUTE)
@@ -45,10 +45,10 @@ const ItemInfoSection = observer((device) => {
     return (
         <div className={classes.deviceInfoSection}>
             <div className={classes.itemTitle}>
-                {device.device.name}
+                {item.name}
             </div>
             <div className={classes.itemPrice}>
-                {device.device.price}
+                {item.price}
             </div>
             <span className={classes.sizeText}>
                 Размер
@@ -72,7 +72,7 @@ const ItemInfoSection = observer((device) => {
                 <div>
                     {modalActive ?
                         <DeleteModal
-                            device={device}
+                            device={item}
                             deleteHandler={deleteDevice}
                             modalHandler={hideModal}/>
                         : null}

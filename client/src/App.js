@@ -29,6 +29,8 @@ const App = observer(() => {
             })
         }, [])
 
+    // console.log(device.devices)
+
         useEffect(() => {
             fetchDevices(device.type, null, device.page, device.gender, 16).then(data => {
                 device.setDevices(data.rows)

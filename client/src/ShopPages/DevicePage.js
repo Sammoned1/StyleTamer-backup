@@ -19,7 +19,10 @@ const DevicePage = observer(() => {
     const [selectedDevice, setSelectedDevice] = useState({})
     const {id} = useParams()
     useEffect(()=>{
-        fetchOneDevice(id).then(data => setSelectedDevice(data))
+        fetchOneDevice(id).then(data => {
+            setSelectedDevice(data)
+            // console.log(data)
+        })
     }, [])
 
     useEffect(() => {
@@ -31,7 +34,7 @@ const DevicePage = observer(() => {
     return (
         <div>
             <div style={{
-                width: '1400px',
+                width: '1600px',
                 margin: '0 auto',
                 paddingTop: '80px',
             }}>
@@ -39,8 +42,8 @@ const DevicePage = observer(() => {
                     display: 'flex',
                     justifyContent: 'space-between',
                 }}>
-                    <ItemPhotoSection device={selectedDevice}/>
-                    <ItemInfoSection device={selectedDevice}/>
+                    <ItemPhotoSection item={selectedDevice}/>
+                    <ItemInfoSection item={selectedDevice}/>
                 </div>
                 <ItemDescription/>
                 <Reviews/>

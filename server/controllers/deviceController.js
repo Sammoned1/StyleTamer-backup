@@ -12,28 +12,25 @@ class DeviceController {
     async create(req, res, next) {
         try {
             let {name, price, brandId, typeId, info, gender, fileList, mainFile} = req.body
-            // const {img} = req.files
-            // Array.prototype.forEach.call(req.files, file => {
-            // let temp = [req.files]
-            // for (let i; i < req.files.length; i++) {
-            //     // temp.push(req.files)
-            //     temp=req.files
-            // }
-            // let fileName = uuid.v4() + '.jpg' // Функция uuid.v4 генерирует рандомный айди
+            let files = [];
+            let fileKeys = Object.keys(req.files);
+            fileKeys.forEach(key => {
+                files.push(req.files[key]);
+            });
 
-            // if (file.name === mainFile){
-            //     const photo = DevicePhoto.create({name: fileName, main: true, deviceId: 32})
-            // }
-            // else {
-            //     const photo = DevicePhoto.create({name: fileName, deviceId: 32})
-            // }
-            // })
-            return res.json({message: req.files.img})
-            // Перемещение файла с заданным именем в нужную нам папку
-            // Функция resolve адаптирует путь под операционную систему
-            //
-            // const device = await Device.create({name, price, brandId, typeId, img: fileName, gender}) // Создание нового девайса на сервере
-            //
+            const device = await Device.create({name, price, brandId, typeId, gender})
+
+            files.forEach(file => {
+                let fileName = uuid.v4() + '.jpg' // Функция uuid.v4 генерирует рандомный айди
+                file.mv(path.resolve(__dirname, '..', 'static', fileName))
+                if (file.name === mainFile){
+                    const photo = DevicePhoto.create({name: fileName, main: true, deviceId: device.id})
+                }
+                else {
+                    const photo = DevicePhoto.create({name: fileName, deviceId: device.id})
+                }
+            })
+
             // if (info) {
             //     info = JSON.parse(info) // Превращение строки в объект
             //     info.forEach(i =>
@@ -44,7 +41,7 @@ class DeviceController {
             //         })
             //     )
             // }
-            // return res.json(device)
+            return res.json(device)
         } catch (e) {
             next(ApiError.badRequest(e.message))
         }

@@ -26,8 +26,6 @@ const CreateNewItemModal = observer(({callback, number}) => {
         setPhotos([...photos, ...e.target.files])
     }
 
-
-
     useEffect(()=>{
         setChecked(photos[0])
     },[photos])
@@ -39,26 +37,18 @@ const CreateNewItemModal = observer(({callback, number}) => {
             formData.append('price', `${price}`)
             photos.forEach((photo)=>{
                 formData.append(`${photo.name}`, photo)
-                console.log(photo)
             })
-            formData.append('mainFile', checked)
-            // formData.append('fileList', photos)
+            formData.append('mainFile', checked.name)
             formData.append('gender', selectedGender)
             formData.append('brandId', selectedBrand.id)
             formData.append('typeId', selectedType.id)
-            // console.log(formData.keys())
             formData.append('info', info)
-            // console.log(formData)
             createDevice(formData).then(data => {
-                // callback(number)
-                console.log('added')
+                callback(number)
             })
         } catch (e) {
             alert('Ошибка при добавлении товара')
         }
-        // console.log(checked)
-        // console.log(photos)
-        // console.log(photos[0])
     }
 
     return (

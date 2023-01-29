@@ -53,6 +53,12 @@ const TypeBrand = sequelize.define('type_brand', { // Промежуточная
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true}
 })
 
+const DevicePhoto = sequelize.define('device_photo', {
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    name: {type: DataTypes.STRING, unique: true, allowNull: false},
+    main: {type: DataTypes.BOOLEAN, defaultValue: false}
+})
+
 User.hasOne(Basket) // Связь 1 к 1
 Basket.belongsTo(User) // Связывание корзины и пользователя
 
@@ -80,6 +86,9 @@ DeviceInfo.belongsTo(Device) // Связывание Информации об �
 Type.belongsToMany(Brand, {through: TypeBrand}) // Связь много ко многим
 Brand.belongsToMany(Type, {through: TypeBrand})
 
+Device.hasMany(DevicePhoto)
+DevicePhoto.belongsTo(Device)
+
 module.exports = { // Экспорт созданных моделей для их дальнейшего исплоьзования
     User,
     Basket,
@@ -89,5 +98,6 @@ module.exports = { // Экспорт созданных моделей для и
     Brand,
     Rating,
     TypeBrand,
-    DeviceInfo
+    DeviceInfo,
+    DevicePhoto
 }

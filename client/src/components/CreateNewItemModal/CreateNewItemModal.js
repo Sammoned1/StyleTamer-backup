@@ -14,7 +14,7 @@ const CreateNewItemModal = observer(({callback, number}) => {
     const {device} = useContext(Context)
     const [name, setName] = useState('')
     const [price, setPrice] = useState(0)
-    const [file, setFile] = useState(null)
+    // const [file, setFile] = useState(null)
     const [info, setInfo] = useState('')
     const [selectedBrand, setSelectedBrand] = useState(null)
     const [selectedType, setSelectedType] = useState(null)
@@ -23,9 +23,10 @@ const CreateNewItemModal = observer(({callback, number}) => {
     const [checked, setChecked] = useState({})
 
     const selectFile = e => {
-        // setChecked(e.target.files[0])
         setPhotos([...photos, ...e.target.files])
     }
+
+
 
     useEffect(()=>{
         setChecked(photos[0])
@@ -33,27 +34,29 @@ const CreateNewItemModal = observer(({callback, number}) => {
 
     const addDevice = () => {
         try {
-            // const formData = new FormData()
-            // formData.append('name', name)
-            // formData.append('price', `${price}`)
-            // formData.append('img', file)
-            // formData.append('gender', selectedGender)
-            // formData.append('brandId', selectedBrand.id)
-            // formData.append('typeId', selectedType.id)
-            // // console.log(formData.keys())
-            // formData.append('info', info)
+            const formData = new FormData()
+            formData.append('name', name)
+            formData.append('price', `${price}`)
+            photos.forEach((photo)=>{
+                formData.append('fileList', photo.name)
+            })
+            formData.append('mainFile', checked.name)
+            // formData.append('fileList', photos)
+            formData.append('gender', selectedGender)
+            formData.append('brandId', selectedBrand.id)
+            formData.append('typeId', selectedType.id)
+            // console.log(formData.keys())
+            formData.append('info', info)
             // console.log(formData)
-            // for (const value of formData.values()) {
-            //     console.log(value);
-            // }
-            // createDevice(formData).then(data => {
-            //     callback(number)
-            // })
+            createDevice(formData).then(data => {
+                // callback(number)
+                console.log('added')
+            })
         } catch (e) {
             alert('Ошибка при добавлении товара')
         }
-        console.log(checked)
-        console.log(photos)
+        // console.log(checked)
+        // console.log(photos)
         // console.log(photos[0])
     }
 

@@ -33,22 +33,22 @@ const CreateNewItemModal = observer(({callback, number}) => {
 
     const addDevice = () => {
         try {
-            // const formData = new FormData()
-            // formData.append('name', name)
-            // formData.append('price', `${price}`)
-            // formData.append('img', file)
-            // formData.append('gender', selectedGender)
-            // formData.append('brandId', selectedBrand.id)
-            // formData.append('typeId', selectedType.id)
-            // // console.log(formData.keys())
-            // formData.append('info', info)
-            // console.log(formData)
-            // for (const value of formData.values()) {
-            //     console.log(value);
-            // }
-            // createDevice(formData).then(data => {
-            //     callback(number)
-            // })
+            const formData = new FormData()
+            formData.append('name', name)
+            formData.append('price', `${price}`)
+            formData.append('img', photos[0])
+            formData.append('gender', selectedGender)
+            formData.append('brandId', selectedBrand.id)
+            formData.append('typeId', selectedType.id)
+            // console.log(formData.keys())
+            formData.append('info', info)
+            console.log(formData)
+            for (const value of formData.values()) {
+                console.log(value);
+            }
+            createDevice(formData).then(data => {
+                callback(number)
+            })
         } catch (e) {
             alert('Ошибка при добавлении товара')
         }

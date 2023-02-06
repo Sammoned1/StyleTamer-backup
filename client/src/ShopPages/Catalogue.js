@@ -10,7 +10,9 @@ const Catalogue = observer(() => {
     const pagesAmount = Math.ceil(device.totalCount / device.limit)
     useEffect(() => {
         device.setGender('')
+        device.setSelectedGender({})
         device.setType(null)
+        device.setSelectedType({})
         device.setPage(1)
     }, [])
 

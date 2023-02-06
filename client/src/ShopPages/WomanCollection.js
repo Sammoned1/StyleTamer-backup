@@ -12,7 +12,9 @@ const WomanCollection = observer(() => {
 
     useEffect(() => {
         device.setGender({id: 1,title: 'F'})
+        device.setSelectedGender({id: 1,title: 'F'})
         device.setType(null)
+        device.setSelectedType({})
         device.setPage(1)
     }, [])
 

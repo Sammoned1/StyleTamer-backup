@@ -10,7 +10,9 @@ const Jewellery = () => {
 
     useEffect(() => {
         device.setGender('')
-        device.setType({id: 21, name: 'Украшения'})
+        device.setSelectedGender({})
+        device.setType({id: 4, name: 'Украшения'})
+        device.setSelectedType({id: 4, name: 'Украшения'})
         device.setPage(1)
     }, [])
 

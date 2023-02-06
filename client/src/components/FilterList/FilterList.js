@@ -13,7 +13,6 @@ import Shop from "../../ShopPages/Shop";
 
 const FilterList = observer(({active, setActive}) => {
     const {device} = useContext(Context)
-
     const [expandedFirst, setExpandedFirst] = useState(false)
     const [expandedSecond, setExpandedSecond] = useState(false)
 
@@ -52,6 +51,7 @@ const FilterList = observer(({active, setActive}) => {
         } else {
             if (device.selectedGender.id === gender.id) {
                 device.setSelectedGender({})
+                // device.setGender({})
             } else {
                 if (gender.id === 1) {
                     device.setSelectedGender({id: 1, title: 'F'})
@@ -105,15 +105,15 @@ const FilterList = observer(({active, setActive}) => {
     }
 
     const removeAllSelected = () => {
-        if (!device.gender.id) {
+        if (!device.gender)
             device.setSelectedGender({})
-        }
-        if (device.selectedType.id) {
+
+        if (!device.type)
             device.setSelectedType({})
-        }
-        if (device.selectedOther.id) {
-            device.setSelectedOther({})
-        }
+
+        // if (device.selectedOther.id)
+        device.setSelectedOther({})
+
     }
 
     const selectAnother = (gender) => {
@@ -132,18 +132,22 @@ const FilterList = observer(({active, setActive}) => {
 
     const saveFilters = () => {
         device.setGender(device.selectedGender)
+        device.setType(device.selectedType)
     }
 
     const clearFilters = () => {
         device.setSelectedGender({})
         device.setGender({})
+        device.setType({})
+        device.setSelectedType({})
     }
 
     return (
         <div className={active ? classes.modal + ' ' + classes.active : classes.modal}
              onClick={() => {
                  setActive(false)
-                 setExpandedFirst(false)
+                 if (!device.type)
+                     setExpandedFirst(false)
                  setExpandedSecond(false)
                  removeAllSelected()
              }}
@@ -165,7 +169,7 @@ const FilterList = observer(({active, setActive}) => {
                                        choose={chooseFirst}
                                        leftImage={gender.icon}
                                        flag={true}
-                                       selected={gender.id === device.selectedGender.id || gender.id === device.gender.id}
+                                       selected={gender.id === device.selectedGender.id}
                                        item={gender}
                             />
                         )}
@@ -177,7 +181,7 @@ const FilterList = observer(({active, setActive}) => {
                                 <FilterRaw key={type.id}
                                            choose={chooseSecond}
                                            expand={expandSecond}
-                                           selected={type.id === device.selectedType.id}
+                                           selected={type.name === device.selectedType.name}
                                            item={type}
                                            leftImage={type.icon}
                                            flag={true}

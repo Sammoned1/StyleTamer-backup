@@ -11,7 +11,7 @@ const Boots = observer(() => {
 
     useEffect(() => {
         device.setGender('')
-        device.setType(16)
+        device.setType({id: 16, name: 'Обувь'})
         device.setPage(1)
     }, [])
 

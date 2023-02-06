@@ -11,16 +11,12 @@ const Sections = () => {
     return (
         <div className={classes.sections}>
             <div className={classes.woman + ' ' + classes.section} onClick={() => {
-                // device.setGender('F')
                 navigate(WOMAN_COLLECTION_ROUTE)
-                // console.log(device.selectedGender)
             }}>
                 <h1 className={classes.sectionText}>ДЛЯ НЕЁ</h1>
             </div>
             <div className={classes.man + ' ' + classes.section} onClick={() => {
-                // device.setGender('M')
                 navigate(MAN_COLLECTION_ROUTE)
-                // console.log(device.selectedGender)
             }}>
                 <h1 className={classes.sectionText}>ДЛЯ НЕГО</h1>
             </div>

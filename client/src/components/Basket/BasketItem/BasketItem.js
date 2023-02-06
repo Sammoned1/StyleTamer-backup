@@ -33,27 +33,25 @@ const BasketItem = observer(({item, setTotal, total, basket, setBasket}) => {
             device.device_photos.forEach(photo => {
                 if (photo.main) {
                     setMainDevice(photo)
-                    // console.log(photo)
                 }
             })
         }
-        console.log(device)
     }, [device])
 
     const increment = () => {
         increaseBasketDevice({deviceId: device.id, basketId}).then(data => {
             setCount(data.count)
+            setTotal(total + device.price)
         })
-        setTotal(total + device.price)
     }
 
     const decrement = () => {
         decreaseBasketDevice({deviceId: device.id, basketId}).then(data => {
             if (count > 1) {
                 setCount(data.count)
+                setTotal(total - device.price)
             }
         })
-        setTotal(total - device.price)
     }
 
     const remove = () => {

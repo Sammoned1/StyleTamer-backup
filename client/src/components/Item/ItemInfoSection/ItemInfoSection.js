@@ -39,7 +39,7 @@ const ItemInfoSection = observer(({item}) => {
         removeDevice(item).then(data => {
             setModalActive(false)
         })
-        navigate(SHOP_ROUTE)
+        // navigate(SHOP_ROUTE)
     }
 
     return (

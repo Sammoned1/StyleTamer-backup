@@ -6,6 +6,9 @@ import {useState} from "react";
 import {Context} from "../../index";
 import {observer} from "mobx-react-lite";
 import MyButton from "../UI/Buttons/MyButton/MyButton";
+import {CATALOGUE_ROUTE, SHOP_ROUTE} from "../../utils/consts";
+import {NavLink, useNavigate} from "react-router-dom";
+import Shop from "../../ShopPages/Shop";
 
 
 const FilterList = observer(({active, setActive}) => {
@@ -17,7 +20,11 @@ const FilterList = observer(({active, setActive}) => {
     const expandFirst = (gender) => {
         if (!expandedFirst) {
             setExpandedFirst(true)
-            device.setSelectedGender(gender)
+            if (gender.id === 1) {
+                device.setSelectedGender({id: 1, title: 'F'})
+            } else {
+                device.setSelectedGender({id: 2, title: 'M'})
+            }
         } else {
             if (device.selectedGender.id === gender.id || !device.selectedGender.id) {
                 if (device.selectedType.id) {
@@ -37,12 +44,20 @@ const FilterList = observer(({active, setActive}) => {
 
     const chooseFirst = (gender) => {
         if (!device.selectedGender.id) {
-            device.setSelectedGender(gender)
+            if (gender.id === 1) {
+                device.setSelectedGender({id: 1, title: 'F'})
+            } else {
+                device.setSelectedGender({id: 2, title: 'M'})
+            }
         } else {
             if (device.selectedGender.id === gender.id) {
                 device.setSelectedGender({})
             } else {
-                device.setSelectedGender(gender)
+                if (gender.id === 1) {
+                    device.setSelectedGender({id: 1, title: 'F'})
+                } else {
+                    device.setSelectedGender({id: 2, title: 'M'})
+                }
             }
         }
     }
@@ -57,7 +72,7 @@ const FilterList = observer(({active, setActive}) => {
             } else {
                 device.setSelectedType(type)
             }
-            if (device.selectedOther.id){
+            if (device.selectedOther.id) {
                 device.setSelectedOther({})
             }
         }
@@ -90,7 +105,7 @@ const FilterList = observer(({active, setActive}) => {
     }
 
     const removeAllSelected = () => {
-        if (device.selectedGender.id) {
+        if (!device.gender.id) {
             device.setSelectedGender({})
         }
         if (device.selectedType.id) {
@@ -105,10 +120,23 @@ const FilterList = observer(({active, setActive}) => {
         if (device.selectedType.id) {
             device.setSelectedType({})
         }
-        if (device.selectedOther.id){
+        if (device.selectedOther.id) {
             device.setSelectedOther({})
         }
-        device.setSelectedGender(gender)
+        if (gender.id === 1) {
+            device.setSelectedGender({id: 1, title: 'F'})
+        } else {
+            device.setSelectedGender({id: 2, title: 'M'})
+        }
+    }
+
+    const saveFilters = () => {
+        device.setGender(device.selectedGender)
+    }
+
+    const clearFilters = () => {
+        device.setSelectedGender({})
+        device.setGender({})
     }
 
     return (
@@ -137,7 +165,7 @@ const FilterList = observer(({active, setActive}) => {
                                        choose={chooseFirst}
                                        leftImage={gender.icon}
                                        flag={true}
-                                       selected={gender.id === device.selectedGender.id}
+                                       selected={gender.id === device.selectedGender.id || gender.id === device.gender.id}
                                        item={gender}
                             />
                         )}
@@ -171,18 +199,22 @@ const FilterList = observer(({active, setActive}) => {
                             )}
                         </div>}
                     <div className={classes.filterBtns}>
-                        <MyButton
-                            title={'Сбросить'}
-                            style={{
-                                fontSize: '18px',
-                                width: '160px'
-                            }}/>
+                        <NavLink to={CATALOGUE_ROUTE}>
+                            <MyButton
+                                title={'Сбросить'}
+                                style={{
+                                    fontSize: '18px',
+                                    width: '160px'
+                                }}
+                                onClick={clearFilters}/>
+                        </NavLink>
                         <MyButton
                             title={'Сохранить'}
                             style={{
                                 fontSize: '18px',
                                 width: '160px'
-                            }}/>
+                            }}
+                            onClick={saveFilters}/>
                     </div>
                 </div>
             </div>

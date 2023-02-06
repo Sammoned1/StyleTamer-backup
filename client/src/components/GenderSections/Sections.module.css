@@ -1,9 +1,9 @@
 .woman{
-    background: url("../../images/sectionImages/woman3 1.jpg") 50% 50% / cover no-repeat;
+    background: url("../../images/sectionImages/woman3 1.jpg") center / cover no-repeat;
     margin-right: 34px;
 }
 .man{
-    background: url("../../images/sectionImages/man4.jpeg") 50% 50% / cover no-repeat;
+    background: url("../../images/sectionImages/man4.jpeg") center / cover no-repeat;
     margin-left: 34px;
 }
 

@@ -10,7 +10,7 @@ const ManCollection = observer(() => {
     const pagesAmount = Math.ceil(device.totalCount / device.limit)
 
     useEffect(() => {
-        device.setGender('M')
+        device.setGender({id: 2,title: 'M'})
         device.setType(null)
         device.setPage(1)
     }, [])

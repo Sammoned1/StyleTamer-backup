@@ -10,7 +10,7 @@ const Bags = observer(() => {
     const pagesAmount = Math.ceil(device.totalCount / device.limit)
     useEffect(() => {
         device.setGender('')
-        device.setType(20)
+        device.setType({id: 20, name: 'Сумки'})
         device.setPage(1)
     }, [])
 

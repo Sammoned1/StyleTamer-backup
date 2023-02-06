@@ -25,11 +25,11 @@ export default class DeviceStore {
         this._limit = 16
 
         this._filterTypes = [
-            {id: 1, name: 'Бренды', icon: classes.brands, list: this._brands},
-            {id: 2, name: 'Одежда', icon: classes.clothes, list: this._clothes},
-            {id: 3, name: 'Обувь', icon: classes.boots, list: this._boots},
-            {id: 4, name: 'Сумки', icon: classes.bags, list: this._bags},
-            {id: 5, name: 'Украшения', icon: classes.jewellery, list: this._jewellery},
+            // {id: 1, name: 'Бренды', icon: classes.brands, list: this._brands},
+            {id: 1, name: 'Одежда', icon: classes.clothes, list: this._clothes},
+            {id: 2, name: 'Обувь', icon: classes.boots, list: this._boots},
+            {id: 3, name: 'Сумки', icon: classes.bags, list: this._bags},
+            {id: 4, name: 'Украшения', icon: classes.jewellery, list: this._jewellery},
         ]
 
         this._selectedGender = {}

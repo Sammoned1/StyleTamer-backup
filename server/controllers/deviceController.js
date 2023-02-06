@@ -46,6 +46,7 @@ class DeviceController {
         limit = limit || 16
         let offset = page * limit - limit
         let devices
+
         // return res.json(gender)
         if (!gender && !typeId && !brandId) {
             devices = await Device.findAndCountAll({
@@ -125,9 +126,14 @@ class DeviceController {
     }
 
     async remove(req, res) {
-        const {id} = req.body.device
+        // console.log(req.body)
+        const {id} = req.body
+        // console.log(id)
         const deviceId = id
         const device = await BasketDevice.destroy({
+            where: {deviceId}
+        })
+        const devicePhotos = await DevicePhoto.destroy({
             where: {deviceId}
         })
         const removableDevice = await Device.destroy({

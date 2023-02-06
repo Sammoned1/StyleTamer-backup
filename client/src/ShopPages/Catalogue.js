@@ -15,8 +15,10 @@ const Catalogue = observer(() => {
     }, [])
 
     return (
-        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-            <div style={{minHeight: '100vh'}}><ItemList title={'Каталог'}/></div>
+        <div>
+            <div style={{minHeight: '100vh'}}>
+                <ItemList title={'Каталог'}/>
+            </div>
             {pagesAmount > 1 ? <Pages/> : null}
             <Footer/>
         </div>

@@ -7,10 +7,6 @@ import jwt_decode from "jwt-decode";
 import {fetchBasket} from "../../http/basketAPI";
 import {Context} from "../../index";
 import {fetchOneDevice} from "../../http/deviceAPI";
-import logo from "../Logo/Logo";
-import {useLocation} from "react-router-dom";
-import {BASKET_ROUTE} from "../../utils/consts";
-import data from "bootstrap/js/src/dom/data";
 
 const Basket = observer(() => {
     const [total, setTotal] = useState(0)

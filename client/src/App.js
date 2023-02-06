@@ -20,6 +20,8 @@ const App = observer(() => {
         const {device} = useContext(Context)
         const token = localStorage.getItem('token')
 
+        // console.log(device.type)
+
         useEffect(() => {
             fetchTypes().then(data => device.setTypes(data))
             fetchBrands().then(data => device.setBrands(data))
@@ -29,15 +31,15 @@ const App = observer(() => {
             })
         }, [])
 
-    // console.log(device.devices)
+        // console.log(device.devices)
 
         useEffect(() => {
-            fetchDevices(device.type, null, device.page, device.gender, 16).then(data => {
+            fetchDevices(device.type ? device.type.id : null, null, device.page, device.gender.title, 16).then(data => {
                 device.setDevices(data.rows)
                 device.setTotalCount(data.count)
             })
         }, [device.gender, device.type, device.page])
-
+        // console.log(device.type)
 
         useEffect(() => {
             window.scrollTo({

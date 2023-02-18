@@ -11,7 +11,7 @@ const AppRouter = () => {
     // const USER = TOKEN ? jwt_decode(TOKEN) : null
 
     return (
-        <div>
+        <div style={{height: '100%'}}>
             <Routes>
                 {user.isAuth && authRoutes.map(({path, Component}) =>
                     <Route key={path} path={path} element={Component} exact/>

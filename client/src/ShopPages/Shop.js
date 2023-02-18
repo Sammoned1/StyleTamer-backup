@@ -8,6 +8,7 @@ import FindMoreItems from "../components/Item/FindMoreItems/FindMoreItems";
 import {Context} from "../index";
 import {fetchBrands, fetchDevices, fetchTypes} from "../http/deviceAPI";
 import {observer} from "mobx-react-lite";
+import MainBanner from "../components/MainBanner/MainBanner";
 
 const Shop = observer(() => {
     const {device} = useContext(Context)
@@ -19,6 +20,10 @@ const Shop = observer(() => {
 
     return (
         <div>
+            {/*<div style={{height: '40vw'}}>*/}
+
+            {/*</div>*/}
+            <MainBanner/>
             {/*<Sections/>*/}
             {/*{device.devices.length ? <Slider title={'Новинки'}>*/}
             {/*    {device.devices.slice(0,8).map((e) =>*/}

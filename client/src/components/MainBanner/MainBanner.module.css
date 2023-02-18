@@ -1,0 +1,52 @@
+.mainBanner{
+    background: url("../../images/jordan banner.jpg") 50% 100%/cover no-repeat;
+    width: 100%;
+    height: 40vw;
+    /*height: 100vh;*/
+    min-height: 500px;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.bannerLogo{
+    font-size: 25px;
+    font-weight: 600;
+    width: max-content;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.bannerLogo:after{
+    content: '';
+    height: 2px;
+    width: 100%;
+    background-color: #252525;
+    position: absolute;
+    top: 40px;
+    left: 0;
+}
+
+.bannerInfo{}
+
+.bannerInfoBlock{
+    background-color: #fff;
+    max-width: 500px;
+    width: 85%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: 200px;
+    box-shadow: 0 0 100px rgba(0,0,0,0.1);
+    font-size: 20px;
+    padding: 20px;
+    color:#252525;
+}
+
+@media (max-width: 900px) {
+    .bannerInfoBlock{
+        margin: 0 50%;
+        transform: translateX(-50%);
+    }
+}

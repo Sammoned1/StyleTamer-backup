@@ -4,6 +4,7 @@
     display: flex;
     /*justify-content: center;*/
     font-family: 'Montserrat', serif;
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
+    align-items: center;
 }
 

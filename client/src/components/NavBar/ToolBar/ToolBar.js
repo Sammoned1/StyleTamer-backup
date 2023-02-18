@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import {Context} from "../../../index";
 import classes from './ToolBar.module.css'
 import ToolBtn from "../../UI/Buttons/ToolBtn/ToolBtn";
-import {NavLink} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 import {
     BAGS_ROUTE,
     BASKET_ROUTE,
@@ -32,15 +32,18 @@ const ToolBar = () => {
         // {id: 7, title: 'Корзина', path: BASKET_ROUTE},
     ]
 
+    const navigate = useNavigate()
+
     return (<div className={classes.toolBar}>
         {tools.map((tool) =>
-            <NavLink key={tool.path} to={tool.path}>
                 <ToolBtn
+                    onClick={()=>{
+                        navigate(tool.path)
+                    }}
                     disabled={tool.disabled}
                     key={tool.id}
                     title={tool.title}
-                />
-            </NavLink>)}
+                />)}
     </div>);
 };
 

@@ -2,22 +2,31 @@
     height: 100%;
     width: min-content;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     position: relative;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     font-weight: 600;
-    margin-left: 40px;
-    margin-right: 40px;
+    margin: auto 10px;
+    /*margin-left: 40px;*/
+    /*margin-right: 40px;*/
     font-family: 'Montserrat', 'sans-serif';
 }
 
 .toolBtn:after {
     content: '';
-    width: 100%;
+    width: 0;
+    /*width: 100%;*/
     height: 2px;
     position: absolute;
     top: 60px;
-    left: 0;
+    left: 50%;
+    /*margin: auto;*/
     background-color: #000;
+    transition: all 0.3s ease;
+}
+
+.toolBtn:hover:after{
+    width: 100%;
+    left: 0;
 }

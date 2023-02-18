@@ -64,7 +64,7 @@ const App = observer(() => {
                 {loading ? <h1 className='loading'>Loading...</h1> :
                     <div>
                         <TopAppBar/>
-                        <ToolBar/>
+                        {/*<ToolBar/>*/}
                         <AppRouter/>
                     </div>}
             </BrowserRouter>

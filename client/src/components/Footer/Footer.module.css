@@ -5,12 +5,20 @@
     height: 300px;
     display: flex;
     flex-direction: column;
-    background-color: #252525;
+    /*background-color: #252525;*/
     align-items: center;
+}
+
+.footerLine{
+    height: 2px;
+    width: 70%;
+    margin:  20px auto;
+    /*margin-bottom: 20px;*/
+    background-color: #252525;
 }
 
 .footerInfo{
     height: 230px;
     width: 100%;
-    background-color: #252525;
+    /*background-color: #252525;*/
 }

@@ -6,8 +6,9 @@ const Footer = () => {
     return (
         <div className={classes.footer}>
             <Logo/>
-            <div className={classes.footerInfo}>
+            <div className={classes.footerLine}></div>
 
+            <div className={classes.footerInfo}>
             </div>
         </div>
     );

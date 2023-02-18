@@ -19,20 +19,20 @@ const Shop = observer(() => {
 
     return (
         <div>
-            <Sections/>
-            {device.devices.length ? <Slider title={'Новинки'}>
-                {device.devices.slice(0,8).map((e) =>
-                    <Item key={e.id} device={e}/>
-                )}
-                {/*<FindMoreItems title={'Больше новых товаров'}/>*/}
-            </Slider> : null}
-            {device.devices.length ?
-                <Slider title={'Популярное'}>
-                    {device.devices.slice(0,8).map((e) =>
-                        <Item key={e.id} device={e}/>
-                    )}
-                    {/*<FindMoreItems title={'Больше популярных товаров'}/>*/}
-                </Slider> : null}
+            {/*<Sections/>*/}
+            {/*{device.devices.length ? <Slider title={'Новинки'}>*/}
+            {/*    {device.devices.slice(0,8).map((e) =>*/}
+            {/*        <Item key={e.id} device={e}/>*/}
+            {/*    )}*/}
+            {/*    /!*<FindMoreItems title={'Больше новых товаров'}/>*!/*/}
+            {/*</Slider> : null}*/}
+            {/*{device.devices.length ?*/}
+            {/*    <Slider title={'Популярное'}>*/}
+            {/*        {device.devices.slice(0,8).map((e) =>*/}
+            {/*            <Item key={e.id} device={e}/>*/}
+            {/*        )}*/}
+            {/*        /!*<FindMoreItems title={'Больше популярных товаров'}/>*!/*/}
+            {/*    </Slider> : null}*/}
             <Footer/>
         </div>
     );

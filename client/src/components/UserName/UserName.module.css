@@ -1,12 +1,12 @@
 .userName{
     text-overflow: ellipsis;
     overflow: hidden;
-    width: auto;
-    height: 54px;
+    /*width: auto;*/
+    height: 60px;
     /*font-size: 25px;*/
     color: #CAB362;
     text-align: center;
-    line-height: 54px;
+    line-height: 60px;
     cursor: pointer;
     font-family: Montserrat, sans-serif;
     letter-spacing: 2px;
@@ -19,6 +19,13 @@
     background: url("../../images/icons/golden_person.png") 50% 50% / contain no-repeat;
 }
 .userBlock{
-    width: 10%;
-    height: 54px;
+    /*width: 30%;*/
+    width: 100%;
+    max-width: 200px;
+    height: 100%;
+    margin-right: 20px;
 }
+
+/*@media (max-width: 1172px) {*/
+/*    */
+/*}*/

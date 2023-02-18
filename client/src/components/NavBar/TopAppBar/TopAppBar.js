@@ -17,11 +17,10 @@ const TopAppBar = observer(() => {
             <div className={classes.barContainer} style={{display: 'flex', alignItems: 'center'}}><ToolBar/></div>
             <div className={classes.barContainer} style={{display: 'flex', justifyContent: 'center'}}><NavLink to={SHOP_ROUTE}><Logo/></NavLink></div>
             <div className={classes.barContainer} style={{display: 'flex', justifyContent: 'end'}}>
+                <UserName/>
                 <LogBtn/>
             </div>
             {/*<SearchBar/>*/}
-            {/*<UserName/>*/}
-
         </header>
     );
 });

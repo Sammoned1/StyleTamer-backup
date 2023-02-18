@@ -18,13 +18,15 @@ const Shop = observer(() => {
         device.setType(null)
     }, [])
 
+    useEffect(() => {
+        window.scrollTo({
+            top: 0
+        })
+    }, [])
+
     return (
         <div>
-            {/*<div style={{height: '40vw'}}>*/}
-
-            {/*</div>*/}
             <MainBanner/>
-            {/*<Sections/>*/}
             {/*{device.devices.length ? <Slider title={'Новинки'}>*/}
             {/*    {device.devices.slice(0,8).map((e) =>*/}
             {/*        <Item key={e.id} device={e}/>*/}

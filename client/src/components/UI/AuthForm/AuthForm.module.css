@@ -1,15 +1,19 @@
 .authPage{
-    background-color: #252525;
-    width: 500px;
-    height: 480px;
+    background-color: #fff;
+    width: 400px;
+    height: auto;
+    max-height: 0;
     display: flex;
     flex-direction: column;
-    border-radius: 30px;
+    box-shadow: 0 0 100px rgba(0,0,0,0.1);
     align-items: center;
-    margin: 50px auto;
-    position: relative;
     font-family: 'Montserrat', 'sans-serif';
-    transition: height 0.4s ease;
+    transition: max-height 0.4s ease;
+    position: absolute;
+    top: 68px;
+    right: 20px;
+    /*z-index: 100;*/
+    overflow: hidden;
 }
 
 .authForm{
@@ -17,29 +21,42 @@
     height: 100%;
 }
 
-.authPage.registration{
-    height: 540px;
+.authModal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 100%;
+}
+
+.authPage.active{
+    max-height: 500px;
+}
+
+.authModal.active{
+    height: 100%;
 }
 
 .title{
     text-align: center;
     font-weight: bolder;
-    font-size: 30px;
-    color: white;
-    margin: 40px 0 40px 0;
-
+    font-size: 25px;
+    color: #252525;
+    margin: 20px 0;
+    user-select: none;
 }
 
 .row{
+    height: 40px;
     display: flex;
     justify-content: center;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .authIcon{
     height: 46px;
-    width: 38px;
-    margin: auto 25px;
+    width: 30px;
+    margin: auto 15px;
 }
 
 .emailIcon{
@@ -51,22 +68,18 @@
 }
 
 .eyeIcon{
-    background: url('../../../images/icons/закрытый глаз.png') 50% 50% / contain no-repeat;
+    background: url('../../../images/icons/crossed black eye.png') 50% 50% / contain no-repeat;
     cursor: pointer;
 }
 
 .eyeIcon.active{
-    background: url('../../../images/icons/открытый глаз.png') 50% 50% / contain no-repeat;
+    background: url('../../../images/icons/black eye.png') 50% 50% / contain no-repeat;
 }
 
 .authText{
-    font-size: 18px;
+    font-size: 14px;
     text-align: center;
-    color: white;
-}
-
-.toRegistration{
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 35px;
+    line-height: 40px;
+    cursor: pointer;
+    user-select: none;
 }

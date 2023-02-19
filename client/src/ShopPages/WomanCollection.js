@@ -26,7 +26,7 @@ const WomanCollection = observer(() => {
 
     return (
         <div>
-            <div style={{minHeight: '100vh'}}>
+            <div style={{marginTop: 68}}>
                 <ItemList title={'Женская коллекция'}/>
             </div>
             {pagesAmount > 1 ? <Pages/> : null}

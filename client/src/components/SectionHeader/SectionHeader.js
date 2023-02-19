@@ -7,11 +7,11 @@ import {observer} from "mobx-react-lite";
 const SectionHeader = ({title}) => {
     const [modalActive, setModalActive] = useState(false)
     return (
-        <div style={{paddingLeft: "4%"}}>
+        <div>
             <div className={classes.sectionTitle}>{title}</div>
-            <FilterBtn onClick={()=>{
-                setModalActive(true)
-            }}/>
+            {/*<FilterBtn onClick={()=>{*/}
+            {/*    setModalActive(true)*/}
+            {/*}}/>*/}
             <FilterList active={modalActive} setActive={setModalActive}/>
         </div>
     );

@@ -1,5 +1,5 @@
 .listPage{
-    width: 1600px;
+    /*width: 1600px;*/
     margin: 0 auto;
     font-family: 'Montserrat', 'sans-serif';
 }
@@ -10,4 +10,10 @@
     grid-template-columns: repeat(4, min-content);
     gap: 60px;
     justify-content: center;
+}
+
+@media (max-width: 1500px) {
+    .list{
+
+    }
 }

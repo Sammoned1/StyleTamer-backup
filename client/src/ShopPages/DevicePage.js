@@ -32,7 +32,7 @@ const DevicePage = observer(() => {
     }, [])
 
     return (
-        <div>
+        <div style={{marginTop: 68}}>
             <div style={{
                 width: '1600px',
                 margin: '0 auto',
@@ -46,7 +46,7 @@ const DevicePage = observer(() => {
                     <ItemInfoSection item={selectedDevice}/>
                 </div>
                 <ItemDescription/>
-                <Reviews/>
+                {/*<Reviews/>*/}
             </div>
             {/*<Slider title={'С этим также берут'}>*/}
             {/*    {device.devices.map((e)=>*/}

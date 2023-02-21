@@ -20,9 +20,7 @@ const Clothes = observer(() => {
 
     return (
         <div>
-            <div style={{marginTop: 68}}>
-                <ItemList title={'Одежда'}/>
-            </div>
+            <ItemList title={'Одежда'}/>
             {pagesAmount > 1 ? <Pages/> : null}
             <Footer/>
         </div>

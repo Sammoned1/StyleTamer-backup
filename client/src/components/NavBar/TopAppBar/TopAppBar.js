@@ -14,11 +14,13 @@ import {SHOP_ROUTE} from "../../../utils/consts";
 const TopAppBar = observer(() => {
     return (
         <header>
-            <div className={classes.barContainer} style={{display: 'flex', alignItems: 'center'}}><ToolBar/></div>
-            <div className={classes.barContainer} style={{display: 'flex', justifyContent: 'center'}}><NavLink to={SHOP_ROUTE}><Logo/></NavLink></div>
-            <div className={classes.barContainer} style={{display: 'flex', justifyContent: 'end'}}>
-                <UserName/>
-                <LogBtn/>
+            <div className={classes.barContent}>
+                <div className={classes.barContainer} style={{display: 'flex', alignItems: 'center'}}><ToolBar/></div>
+                <div className={classes.barContainer} style={{display: 'flex', justifyContent: 'center'}}><NavLink to={SHOP_ROUTE}><Logo/></NavLink></div>
+                <div className={classes.barContainer} style={{display: 'flex', justifyContent: 'end'}}>
+                    <UserName/>
+                    <LogBtn/>
+                </div>
             </div>
             {/*<SearchBar/>*/}
         </header>

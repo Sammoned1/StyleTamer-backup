@@ -7,7 +7,8 @@
     position: relative;
     letter-spacing: 1px;
     font-weight: 600;
-    margin: auto 10px;
+    /*margin: auto 10px;*/
+    margin-right: 15px;
     font-family: 'Montserrat', 'sans-serif';
     user-select: none;
 }
@@ -17,7 +18,7 @@
     width: 0;
     height: 2px;
     position: absolute;
-    top: 50px;
+    top: 30px;
     left: 50%;
     background-color: #000;
     transition: all 0.3s ease;

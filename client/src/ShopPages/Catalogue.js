@@ -18,9 +18,8 @@ const Catalogue = observer(() => {
 
     return (
         <div>
-            <div style={{marginTop: 68}}>
-                <ItemList title={'Каталог'}/>
-            </div>
+            <ItemList title={'Каталог'}/>
+            {/*</div>*/}
             {pagesAmount > 1 ? <Pages/> : null}
             <Footer/>
         </div>

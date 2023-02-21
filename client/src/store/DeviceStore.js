@@ -24,6 +24,11 @@ export default class DeviceStore {
         this._totalCount = 0
         this._limit = 16
 
+        this._filterTypes2 = [
+            {id: 1, name: 'Размер'},
+            {id: 2, name: 'Брэнд'}
+        ]
+
         this._filterTypes = [
             // {id: 1, name: 'Бренды', icon: classes.brands, list: this._brands},
             {id: 1, name: 'Одежда', icon: classes.clothes, list: this._clothes},

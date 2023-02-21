@@ -18,9 +18,7 @@ const Bags = observer(() => {
 
     return (
         <div>
-            <div style={{marginTop: 68}}>
-                <ItemList title={'Сумки'}/>
-            </div>
+            <ItemList title={'Сумки'}/>
             {pagesAmount > 1 ? <Pages/> : null}
             <Footer/>
         </div>

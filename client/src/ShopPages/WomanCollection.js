@@ -26,9 +26,7 @@ const WomanCollection = observer(() => {
 
     return (
         <div>
-            <div style={{marginTop: 68}}>
-                <ItemList title={'Женская коллекция'}/>
-            </div>
+            <ItemList title={'Женская коллекция'}/>
             {pagesAmount > 1 ? <Pages/> : null}
             <Footer/>
         </div>

@@ -1,13 +1,13 @@
 import React from 'react';
 import classes from './FilterBtn.module.css'
 
-const FilterBtn = ({onClick}) => {
+const FilterBtn = ({onClick, isActive}) => {
     return (
-        <div onClick={onClick} className={classes.filterBtn}>
+        <div onClick={onClick} className={isActive ? classes.filterBtn + " " + classes.active :classes.filterBtn}>
             <button  className={classes.filterText}>
-                Фильтры
+                Фильтр
             </button>
-            <div className={classes.filterIcon}></div>
+            {/*<div className={classes.filterIcon}></div>*/}
         </div>
     );
 };

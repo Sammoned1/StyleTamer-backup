@@ -18,9 +18,7 @@ const Jewellery = () => {
 
     return (
         <div>
-            <div style={{minHeight: '100vh'}}>
-                <ItemList title={'Украшения'}/>
-            </div>
+            <ItemList title={'Украшения'}/>
             {pagesAmount > 1 ? <Pages/> : null}
             <Footer/>
         </div>

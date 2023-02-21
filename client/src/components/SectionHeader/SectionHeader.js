@@ -12,7 +12,7 @@ const SectionHeader = ({title}) => {
             {/*<FilterBtn onClick={()=>{*/}
             {/*    setModalActive(true)*/}
             {/*}}/>*/}
-            <FilterList active={modalActive} setActive={setModalActive}/>
+            {/*<FilterList active={modalActive} setActive={setModalActive}/>*/}
         </div>
     );
 };

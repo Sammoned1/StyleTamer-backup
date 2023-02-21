@@ -162,7 +162,7 @@ const FilterList = observer(({active, setActive}) => {
                 <div
                     className={classes.filterList}>
                     <div className={classes.firstSection}>
-                        <PriceFilter active={active}/>
+                        {/*<PriceFilter active={active}/>*/}
                         {device.genders.map((gender) => // Отрисовка первого блока
                             <FilterRaw key={gender.id}
                                        expand={expandFirst}

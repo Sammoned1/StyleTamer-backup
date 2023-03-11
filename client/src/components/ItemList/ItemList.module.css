@@ -38,10 +38,19 @@
     }
 }
 
-@media (max-width: 1350px){
-
+@media (max-width: 1250px){
     .list.active{
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 800px) {
+    .list{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .list.active{
+        /*max-height: 0;*/
+        overflow-y: hidden;
     }
 }
 

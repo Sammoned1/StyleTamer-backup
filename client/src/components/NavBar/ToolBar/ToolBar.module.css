@@ -9,9 +9,22 @@
     /*margin-left: 20px;*/
 }
 
-@media (max-width: 1172px) {
+.toolIconContainer{
+    display: none;
+    height: 32px;
+    width: 32px;
+    /*background-color: red;*/
+    background: url("../../../images/icons/menu.png") left/contain no-repeat;
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+
+@media (max-width: 1180px) {
     .toolBar{
         display: none;
+    }
+    .toolIconContainer{
+        display: block;
     }
 }
 

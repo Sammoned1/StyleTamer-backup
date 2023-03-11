@@ -34,17 +34,24 @@ const ToolBar = () => {
 
     const navigate = useNavigate()
 
-    return (<div className={classes.toolBar}>
-        {tools.map((tool) =>
-                <ToolBtn
-                    onClick={()=>{
-                        navigate(tool.path)
-                    }}
-                    disabled={tool.disabled}
-                    key={tool.id}
-                    title={tool.title}
-                />)}
-    </div>);
+    return(
+        <div>
+            <div className={classes.toolBar}>
+                {tools.map((tool) =>
+                    <ToolBtn
+                        onClick={() => {
+                            navigate(tool.path)
+                        }}
+                        disabled={tool.disabled}
+                        key={tool.id}
+                        title={tool.title}
+                    />)}
+            </div>
+            <div className={classes.toolIconContainer}>
+
+            </div>
+        </div>
+    );
 };
 
 export default ToolBar;

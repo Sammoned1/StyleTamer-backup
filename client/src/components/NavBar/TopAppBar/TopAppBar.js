@@ -15,11 +15,19 @@ const TopAppBar = observer(() => {
     return (
         <header>
             <div className={classes.barContent}>
-                <div className={classes.barContainer} style={{display: 'flex', alignItems: 'center'}}><ToolBar/></div>
+                <div className={classes.barContainer} style={{display: 'flex', alignItems: 'center'}}>
+                    <ToolBar/>
+                </div>
                 <div className={classes.barContainer} style={{display: 'flex', justifyContent: 'center'}}><NavLink to={SHOP_ROUTE}><Logo/></NavLink></div>
                 <div className={classes.barContainer} style={{display: 'flex', justifyContent: 'end'}}>
-                    <UserName/>
-                    <LogBtn/>
+                    {/*<UserName/>*/}
+                    {/*<LogBtn/>*/}
+                    <div className={classes.searchIconContainer}>
+
+                    </div>
+                    <div className={classes.profileIconContainer}>
+
+                    </div>
                 </div>
             </div>
             {/*<SearchBar/>*/}

@@ -21,12 +21,13 @@ const ItemList = observer(({title}) => {
             setLoaded(true)
         }, 200)
     }, [device.page])
+    // console.log(window.innerWidth)
 
     return (
         <div className={classes.listPage}>
             <div className={classes.listContainer}>
                 <SectionHeader title={title}/>
-                <FilterBtn onClick={()=>{
+                <FilterBtn isActive={filterActive} onClick={()=>{
                     if (filterActive)
                         setFilterActive(false)
                     else

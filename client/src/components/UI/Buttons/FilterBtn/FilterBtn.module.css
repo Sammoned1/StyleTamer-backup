@@ -21,13 +21,38 @@
     height: 40px;
     display: flex;
     font-family: 'Montserrat', 'sans-serif';
-    /*border: 1px solid #252525;*/
-    /*margin-left: 30px;*/
-    /*position: sticky;*/
     background-color: #fff;
-    /*box-shadow: 0 0 10px rgba(0,0,0,0.2);*/
-    /*top: 68px;*/
     z-index: 2000;
     transition: all 0.4s ease;
-    /*left: 0;*/
 }
+
+@media (max-width: 800px) {
+    .filterBtn.active{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        /*text-align: center;*/
+    }
+
+    .filterText{
+        width: 100%;
+        text-align: center;
+        position: relative;
+    }
+
+    .filterBtn.active .filterText::after{
+        content: '';
+        position: absolute;
+        top: 40px;
+        left: 0;
+        height: 2px;
+        width: 70%;
+        background-color: #252525;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+    
+}
+
+

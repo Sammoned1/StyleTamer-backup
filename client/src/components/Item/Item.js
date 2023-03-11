@@ -16,8 +16,8 @@ const Item = ({device, price='10000'}) => {
         <div className={classes.item} onClick={()=>navigate(DEVICE_ROUTE + '/' + device.id)}>
             <img src={process.env.REACT_APP_API_URL + device.device_photos[0].name} className={classes.itemImage}></img>
             <div className={classes.itemDescription}>
-                <p style={{height : "auto"}}>{device.name}</p>
-                <p style={{fontWeight: 'bold'}}>{device.price} р</p>
+                <p className={classes.name}>{device.name}</p>
+                <p className={classes.price}>{device.price} р</p>
             </div>
         </div>
     );

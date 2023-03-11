@@ -19,7 +19,7 @@
     transform: rotate(180deg);
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1300px) {
     .toolBar{
         display: none;
     }

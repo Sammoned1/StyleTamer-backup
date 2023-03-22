@@ -1,12 +1,23 @@
 .searchBar {
-    background-color: #fff;
-    height: 32px;
-    width: 600px;
-    border-radius: 100px;
-    padding: 0 60px 0 18px;
-    font-size: 20px;
+    border:2px solid #b87333;
+    /*margin-top: 68px;*/
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    width: 100%;
+    padding-left: 18px;
+    font-size: 14px;
+    z-index: 3000;
+    max-width: 1400px;
+    margin: auto;
+    transition: all 0.2s ease;
     position: relative;
+}
 
+.searchBar.active{
+    height: 40px;
+    opacity: 1;
+    visibility: visible;
 }
 
 .searchInput {
@@ -16,19 +27,30 @@
 }
 
 .searchIcon {
-    content: '';
-    height: 100%;
-    width: 22px;
+    /*background-color: orange;*/
+    height: 28px;
+    width: auto;
     position: absolute;
-    /*top: 5px;*/
-    bottom: 0;
-    right: 15px;
-    background: url("../../../images/icons/лупа.png") 50% 50% /contain no-repeat;
+    opacity: 0;
+    visibility: hidden;
+    /*right: 69px;*/
+    right: 18px;
+    top: 50%;
+    /*background: url("../../../images/icons/magnifying glass.png") center/contain no-repeat;*/
+    transform: translateY(-50%);
+    transition: all 0.2s ease;
     cursor: pointer;
+    line-height: 28px;
 }
 
-input::-webkit-input-placeholder {
-    color: #838383;
-    font-family: Montserrat, sans-serif;
-    font-size: 16px;
+.searchBar.active .searchIcon{
+
+    opacity: 1;
+    visibility: visible;
 }
+
+/*input::-webkit-input-placeholder {*/
+/*    color: #838383;*/
+/*    font-family: Montserrat, sans-serif;*/
+/*    font-size: 16px;*/
+/*}*/

@@ -1,11 +1,13 @@
 import React from 'react';
 import classes from './SearchBar.module.css'
 
-const SearchBar = () => {
+const SearchBar = ({barActive}) => {
     return (
-        <div className={classes.searchBar}>
-            <input className={classes.searchInput} type="text" placeholder="Поиск товаров"/>
-            <div className={classes.searchIcon}></div>
+        <div className={barActive ? classes.searchBar + " " + classes.active : classes.searchBar}>
+            <input className={classes.searchInput} type="text" placeholder="Поиск товаров..."/>
+            <div className={classes.searchIcon}>
+                Поиск
+            </div>
         </div>
     );
 };

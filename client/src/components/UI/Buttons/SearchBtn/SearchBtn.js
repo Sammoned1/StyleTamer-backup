@@ -1,10 +1,10 @@
 import React from 'react';
 import classes from "./SearchBtn.module.css";
 
-const SearchBtn = () => {
+const SearchBtn = (props) => {
     return (
-        <div className={classes.searchIconContainer}>
-
+        <div className={classes.searchIconContainer} {...props}>
+            {/*<div className={classes.searchBar}></div>*/}
         </div>
     );
 };

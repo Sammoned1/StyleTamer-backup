@@ -47,9 +47,6 @@ const ToolBar = () => {
                         title={tool.title}
                     />)}
             </div>
-            <div className={classes.toolIconContainer}>
-
-            </div>
         </div>
     );
 };

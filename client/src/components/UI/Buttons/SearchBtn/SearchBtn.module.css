@@ -5,3 +5,12 @@
     cursor: pointer;
     margin-right: 5px;
 }
+
+.searchBar{
+    width: 100%;
+    /*position: absolute;*/
+    /*top: 68px;*/
+    /*left: 0;*/
+    border: 2px solid #b87333;
+    height: 68px;
+}

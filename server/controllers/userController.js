@@ -11,6 +11,14 @@ const generateJwt = (id, email, role) => {
     )
 }
 
+const refreshJwt = (id, email, role) => {
+    return jwt.sign(
+        {id, email, role},
+        process.env.SECRET_KEY,
+        {expiresIn: '7d'}
+    )
+}
+
 class UserController {
     async registration(req, res, next) {
         const {email, password, role} = req.body
@@ -30,15 +38,15 @@ class UserController {
 
     async login(req, res, next) {
         const {email, password} = req.body
-        if (!email || !password){
+        if (!email || !password) {
             return next(ApiError.internal('Пожалуйста, заполние поля для ввода'))
         }
         const user = await User.findOne({where: {email}})
-        if(!user){
+        if (!user) {
             return next(ApiError.internal('Неверный логин или пароль'))
         }
         let comparePassword = bcrypt.compareSync(password, user.password)
-        if(!comparePassword){
+        if (!comparePassword) {
             return next(ApiError.internal('Неверный логин или пароль'))
         }
         const token = generateJwt(user.id, user.email, user.role)
@@ -49,8 +57,13 @@ class UserController {
     // res - ответ от сервера
 
     async check(req, res, next) {
-        const token = generateJwt(req.user.id, req.user.email, req.user.role)
-        return res.json({token})
+        try {
+            const token = generateJwt(req.user.id, req.user.email, req.user.role)
+            return res.json({token})
+        } catch (e) {
+            // console.log('-------------------' + e + '-------------------')
+            return next(ApiError.unauthorized('Пользователь не авторизован'))
+        }
     }
 }
 

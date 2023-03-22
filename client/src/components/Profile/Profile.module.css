@@ -1,33 +1,37 @@
-.profile{
-    width: 580px;
-    background-color: #252525;
-    border-radius: 35px;
-    padding-bottom: 20px;
-    padding-top: 50px;
-}
-
-.profileTitle{
-    font-size: 30px;
-    color: white;
-    font-weight: bolder;
-    margin-left: 50px;
-    margin-bottom: 40px;
-}
-
-.adminPanel{
-    width: 580px;
-    background-color: #252525;
-    border-radius: 35px;
-    height: 100px;
-    margin-top: 50px;
+.profilePage{
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-top: 68px;
     padding: 0 30px;
 }
 
-.adminText{
-    color: white;
-    font-size: 22px;
+.profileContainer{
     width: 100%;
+    max-width: 1400px;
+}
+
+.profileTitle{
+    font-size: 20px;
+    font-weight: 700;
+    height: 60px;
+    line-height: 60px;
+}
+
+.profile{
+    width: min-content;
+    max-width: 500px;
+}
+
+.changePwd{
+    width: 100%;
+    height: 40px;
+    background-color: #b87333;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
 }

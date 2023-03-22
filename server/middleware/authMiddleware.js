@@ -6,12 +6,16 @@ module.exports = function (req, res, next) {
     }
     try {
         const token = req.headers.authorization.split(' ')[1] // Тип токена: bearer ; Токен: asdasdqwdqwd
+        console.log(token)
         if (!token) {
             return res.status(401).json({message: 'Токен не определен'})
         }
         req.user = jwt.verify(token, process.env.SECRET_KEY)
         next()
     } catch (e) {
-        res.status(401).json({message: e})
+        console.log('error')
+        next()
+        // console.log('-------------------' + e + '-------------------')
+        // return res.status(401).json({message: e})
     }
 }

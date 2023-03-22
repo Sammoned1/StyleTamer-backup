@@ -1,0 +1,11 @@
+.profileIconContainer {
+    height: 32px;
+    width: 32px;
+    background: url("../../../../images/icons/person_blackIcon.png") right/contain no-repeat;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.loginContainer{
+    position: relative;
+}

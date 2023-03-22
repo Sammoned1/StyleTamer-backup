@@ -21,7 +21,7 @@ const AuthForm = observer(({isActive, setIsActive}) => {
     const [passwdFlag, setPasswdFlag] = useState(false)
     const [retypePasswdFlag, setRetypePasswdFlag] = useState(false)
     const token = localStorage.getItem('token')
-    const [isLogin, setIsLogin] = useState(!token)
+    const [isLogin, setIsLogin] = useState(true)
 
     const click = async (e) => {
         e.preventDefault()
@@ -34,6 +34,7 @@ const AuthForm = observer(({isActive, setIsActive}) => {
             }
             user.setIsAuth(true)
             user.setUser(true)
+            setIsActive(false)
         } catch (e) {
             alert(e.response.data.message)
         }
@@ -51,7 +52,10 @@ const AuthForm = observer(({isActive, setIsActive}) => {
         <div className={isActive ? classes.authModal + ' ' + classes.active : classes.authModal} onClick={() => {
             setIsActive(false)
             setInputDefault()
-            setIsLogin(true)
+            setTimeout(()=>{
+                setIsLogin(true)
+            }, 300)
+            // setIsLogin(true)
         }}>
             <div className={isActive ? classes.authPage + " " + classes.active : classes.authPage}
                  onClick={e => e.stopPropagation()}>

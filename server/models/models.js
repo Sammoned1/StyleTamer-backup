@@ -5,8 +5,9 @@ const {DataTypes} = require('sequelize') // Импорт класса для о�
 
 const User = sequelize.define('user', { // Описание структуры пользователя
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    email: {type: DataTypes.STRING, unique: true},
-    password: {type: DataTypes.STRING},
+    email: {type: DataTypes.STRING, unique: true, allowNull: false},
+    username: {type: DataTypes.STRING, unique: true},
+    password: {type: DataTypes.STRING, allowNull: false},
     role: {type: DataTypes.STRING, defaultValue: 'USER'}
 })
 

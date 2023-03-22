@@ -9,10 +9,6 @@ const SectionHeader = ({title}) => {
     return (
         <div>
             <div className={classes.sectionTitle}>{title}</div>
-            {/*<FilterBtn onClick={()=>{*/}
-            {/*    setModalActive(true)*/}
-            {/*}}/>*/}
-            {/*<FilterList active={modalActive} setActive={setModalActive}/>*/}
         </div>
     );
 };

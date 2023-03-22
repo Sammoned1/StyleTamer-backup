@@ -50,6 +50,7 @@ const App = observer(() => {
         useEffect(() => {
             setTimeout(() => {
                 check().then(data => {
+                    // console.log(data)
                     user.setUser(true)
                     user.setIsAuth(true)
                 }).finally(() => {

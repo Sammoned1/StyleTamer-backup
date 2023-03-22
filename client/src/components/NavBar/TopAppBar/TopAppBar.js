@@ -10,6 +10,9 @@ import ToolBar from "../ToolBar/ToolBar";
 import classes from './TopAppBar.module.css'
 import {NavLink} from "react-router-dom";
 import {SHOP_ROUTE} from "../../../utils/consts";
+import Profile from "../../Profile/Profile";
+import ProfileBtn from "../../UI/Buttons/ProfileBtn/ProfileBtn";
+import SearchBtn from "../../UI/Buttons/SearchBtn/SearchBtn";
 
 const TopAppBar = observer(() => {
     return (
@@ -20,14 +23,8 @@ const TopAppBar = observer(() => {
                 </div>
                 <div className={classes.barContainer} style={{display: 'flex', justifyContent: 'center'}}><NavLink to={SHOP_ROUTE}><Logo/></NavLink></div>
                 <div className={classes.barContainer} style={{display: 'flex', justifyContent: 'end'}}>
-                    {/*<UserName/>*/}
-                    {/*<LogBtn/>*/}
-                    <div className={classes.searchIconContainer}>
-
-                    </div>
-                    <div className={classes.profileIconContainer}>
-
-                    </div>
+                    <SearchBtn/>
+                    <ProfileBtn/>
                 </div>
             </div>
             {/*<SearchBar/>*/}

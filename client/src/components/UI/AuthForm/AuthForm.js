@@ -22,7 +22,6 @@ const AuthForm = observer(({isActive, setIsActive}) => {
     const [retypePasswdFlag, setRetypePasswdFlag] = useState(false)
     const token = localStorage.getItem('token')
     const [isLogin, setIsLogin] = useState(true)
-
     const click = async (e) => {
         e.preventDefault()
         try {

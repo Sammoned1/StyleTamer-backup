@@ -7,8 +7,9 @@ import jwt_decode from "jwt-decode";
 const ProfileRow = ({title, placeholder}) => {
     const {user} = useContext(Context)
     const token = localStorage.getItem('token')
-    const username = token ? jwt_decode(token).email : null
+    const EMAIL = token ? jwt_decode(token).email : null
     const [active, setActive] = useState(false)
+    const [string, setString] = useState(placeholder)
     return (
         <div className={classes.profileRow}>
             <div>{title}</div>
@@ -16,21 +17,36 @@ const ProfileRow = ({title, placeholder}) => {
                 <div className={classes.rowTextContainer}>
                     <div className={classes.rowText}>
                         {!active ?
-                            placeholder :
-                            <input type="text" placeholder={placeholder}/>}
+                            string :
+                            <input type="text" placeholder={string} onChange={e => {
+                                // console.log(e.target.value)
+                                setString(e.target.value)
+                            }}/>}
                     </div>
 
                 </div>
-                <div className={classes.flagBlock} onClick={() => {
-                    if (active)
-                        setActive(false)
-                    else
+                {!active ?
+                    <div className={classes.flagBlock} onClick={() => {
                         setActive(true)
-                }}/>
+                    }}>
+                        <div className={classes.flagEdit}></div>
+                    </div> :
+                    <div className={classes.flagBlock} onClick={() => {
+                        setActive(false)
+                    }}>
+                        <div className={classes.flagCheck} onClick={()=>{
+                            console.log(string)
+                        }}></div>
+                    </div>
+                }
+
                 {active ?
                     <div className={classes.flagBlock} onClick={() => {
-                        console.log('x')
-                    }}/> : null}
+                        setString(placeholder)
+                        setActive(false)
+                    }}>
+                        <div className={classes.flagCross}></div>
+                    </div> : null}
             </div>
         </div>
     );

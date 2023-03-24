@@ -24,6 +24,9 @@ export default class DeviceStore {
         this._totalCount = 0
         this._limit = 16
 
+        this._wishList = []
+        this._historyList = []
+
         this._filterTypes2 = [
             {id: 1, name: 'Размер'},
             {id: 2, name: 'Брэнд'}
@@ -73,7 +76,7 @@ export default class DeviceStore {
         this._selectedType = type
     }
 
-    setSelectedBrand(brand){
+    setSelectedBrand(brand) {
         this._selectedBrand = brand
     }
 
@@ -103,6 +106,14 @@ export default class DeviceStore {
 
     setBrand(brand) {
         this._brand = brand
+    }
+
+    setWishList(wishList) {
+        this._wishList = wishList
+    }
+
+    setHistoryList(historyList) {
+        this._historyList = historyList
     }
 
     get types() {
@@ -163,5 +174,13 @@ export default class DeviceStore {
 
     get brand() {
         return this._brand
+    }
+
+    get wishList() {
+        return this._wishList
+    }
+
+    get historyList() {
+        return this._historyList
     }
 }

@@ -1,4 +1,4 @@
-.profilePage{
+.profilePage {
     width: 100%;
     height: 100%;
     display: flex;
@@ -7,24 +7,26 @@
     padding: 0 30px;
 }
 
-.profileContainer{
+.profileContainer {
     width: 100%;
     max-width: 1400px;
+    display: flex;
 }
 
-.profileTitle{
+.profileTitle {
     font-size: 20px;
     font-weight: 700;
     height: 60px;
     line-height: 60px;
+    margin-bottom: 20px;
 }
 
-.profile{
-    width: min-content;
-    max-width: 500px;
+.profileInnerColumn {
+    width: auto;
+    /*max-width: 500px;*/
 }
 
-.changePwd{
+.profileBtn {
     width: 100%;
     height: 40px;
     background-color: #b87333;
@@ -34,4 +36,48 @@
     text-align: center;
     line-height: 40px;
     cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.logOutBtn {
+    margin-top: 80px;
+    width: 100%;
+    background-color: red;
+    height: 40px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.adminBtn {
+    margin-bottom: 20px;
+    width: 100%;
+    background-color: goldenrod;
+    height: 40px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.profileColumn {
+    width: calc(100% / 3);
+    display: flex;
+}
+
+.leftInnerColumn{
+    width: min-content;
+}
+
+.centralColumn{
+    justify-content: center;
+}
+
+.rightColumn{
+    justify-content: right;
 }

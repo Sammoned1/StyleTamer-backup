@@ -30,9 +30,30 @@
 .flagBlock{
     height: 40px;
     width: 40px;
-    background-color: orange;
+    /*background-color: orange;*/
     margin-left: 20px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flagEdit{
+    height: 18px;
+    width: 18px;
+    background: url("../../../images/icons/editIcon.png") center/contain no-repeat;
+}
+
+.flagCross{
+    height: 26px;
+    width: 26px;
+    background: url("../../../images/icons/cross.png") center/contain no-repeat;
+}
+
+.flagCheck{
+    height: 24px;
+    width: 24px;
+    background: url("../../../images/icons/blackCheck.png") center/contain no-repeat;
 }
 
 .rowText::after{

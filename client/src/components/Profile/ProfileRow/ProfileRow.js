@@ -18,7 +18,7 @@ const ProfileRow = ({title, placeholder}) => {
                     <div className={classes.rowText}>
                         {!active ?
                             string :
-                            <input type="text" placeholder={string} onChange={e => {
+                            <input type="text" value={string} onChange={e => {
                                 // console.log(e.target.value)
                                 setString(e.target.value)
                             }}/>}
@@ -34,9 +34,7 @@ const ProfileRow = ({title, placeholder}) => {
                     <div className={classes.flagBlock} onClick={() => {
                         setActive(false)
                     }}>
-                        <div className={classes.flagCheck} onClick={()=>{
-                            console.log(string)
-                        }}></div>
+                        <div className={classes.flagCheck}></div>
                     </div>
                 }
 

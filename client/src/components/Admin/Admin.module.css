@@ -4,41 +4,116 @@
 
 .adminPage{
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 108px;
+    padding: 0 30px;
 }
 
 .adminContainer{
     max-width: 1400px;
     width: 100%;
-    height: auto;
-}
-
-.addTitle{
-    font-size: 22px;
-    color: white;
-    margin: 35px 0 15px 0;
+    height: 100%;
+    /*background-color: orangered;*/
 }
 
 .adminTitle{
     font-size: 20px;
     font-weight: 700;
+    width: auto;
     height: 60px;
     line-height: 60px;
     margin-bottom: 20px;
 }
 
-.add{
+.adminUpperRow{
+    width: 100%;
     display: flex;
+    height: auto;
+    margin-bottom: 20px;
 }
 
-.alert{
-    font-size: 20px;
-    color: #E73535;
+.upperRowContainer{
+    width: 50%;
+    height: 100%;
+    margin-right: 20px;
 }
 
-.createItemSection{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+.upperRowList{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+}
+
+.rowTitle{
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.item{
+    width: auto;
+    /*flex: 1;*/
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.inputBlock{
+    height: 40px;
+    width: 150px;
+    position: relative;
+}
+
+.inputBlock>input{
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+}
+
+.inputBlock::after{
+    content: '';
+    position: absolute;
+    top: 34px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #b87333;
+}
+
+.adminBtn{
+    height: 40px;
+    width: auto;
+    padding: 0 15px;
+    margin-left: 20px;
+    background-color: #b87333;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.addNewContainer{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.lowerRowContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.adminLowerRow{
+    width: 100%;
+    height: auto;
+}
+
+.lowerRowContainerBlock{
+    height: 100px;
+    width: 300px;
+    background-color: orangered;
 }

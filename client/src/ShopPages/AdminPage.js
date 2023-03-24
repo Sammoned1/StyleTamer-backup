@@ -1,10 +1,12 @@
 import React from 'react';
 import Admin from "../components/Admin/Admin";
+import Footer from "../components/Footer/Footer";
 
 const AdminPage = () => {
     return (
-        <div style={{width: '1600px', margin: '88px 8%'}}>
+        <div>
             <Admin/>
+            <Footer/>
         </div>
     );
 };

@@ -79,27 +79,12 @@ const CreateNewItemModal = observer(({callback, number}) => {
                     }}
                     style={{borderTopLeftRadius: 0, borderBottomLeftRadius: 0, marginLeft: 2}}/>
             </div>
-            {/*<div className={classes.textAreaBlock}>*/}
-            {/*    <textarea*/}
-            {/*        className={classes.textArea}*/}
-            {/*        placeholder={'Введите описание товара'}*/}
-            {/*        wrap={'soft'}*/}
-            {/*        name=""*/}
-            {/*        value={info}*/}
-            {/*        id="" cols="10" rows="3"*/}
-            {/*        onChange={e => {*/}
-            {/*            setInfo(e.target.value)*/}
-            {/*        }}></textarea>*/}
-            {/*</div>*/}
             <div className={classes.createModalText}>Выберите тип товара</div>
             <MySelect array={device.types} handler={setSelectedType}/>
             <div className={classes.createModalText}>Выберите бренд товара</div>
             <MySelect array={device.brands} handler={setSelectedBrand}/>
             <div className={classes.createModalText}>Выберите фото товара</div>
             <AddPhotoInput onChange={selectFile} number={number}/>
-            {/*<label htmlFor={number}>файл</label>*/}
-            {/*<AddPhotoInput/>*/}
-            {/*<input type="file" id={number} onChange={selectFile} multiple/>*/}
             <div style={{marginBottom: 20}} className={classes.photoBlock}>
                 {photos.length ? photos.map((photo) =>
                     <AddedPhoto key={photo.name} photo={photo} array={photos} setArray={setPhotos} checked={checked} setChecked={setChecked}/>

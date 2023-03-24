@@ -40,29 +40,35 @@ const Admin = () => {
     }
 
     return (
-        <div style={{display: 'flex', justifyContent: "space-between"}}>
-            <div className={classes.adminModal}>
-                <div className={classes.adminTitle}>Панель Администратора</div>
-                {/*<div className={classes.alert}> ! Название типа и бренда вводить с большой буквы !</div>*/}
-                <div className={classes.addTitle}>Добавить новый тип</div>
-                <div className={classes.add}>
-                    <MyInput placeholder={'Введите название типа'} handler={setType} value={type}/>
-                    <MyButton title={'Добавить'} style={{fontSize: 20, marginLeft: 25}} onClick={addType}/>
-                </div>
-                <div className={classes.addTitle}>Добавить новый бренд</div>
-                <div className={classes.add}>
-                    <MyInput placeholder={'Введите название бренда'} handler={setBrand} value={brand}/>
-                    <MyButton title={'Добавить'} style={{fontSize: 20, marginLeft: 25}} onClick={addBrand}/>
-                </div>
-                <div style={{width: 300, margin: '50px auto 20px auto'}}>
-                    <MyButton onClick={createItem} title={'Добавить товар'} style={{fontSize: 20}}/>
-                </div>
+        <div className={classes.adminPage}>
+            <div className={classes.adminContainer}>
+                <div className={classes.adminTitle}>ПАНЕЛЬ АДМИНИСТРАТОРА</div>
+
+
+
+
+
+                {/*<div className={classes.adminTitle}>Панель Администратора</div>*/}
+                {/*/!*<div className={classes.alert}> ! Название типа и бренда вводить с большой буквы !</div>*!/*/}
+                {/*<div className={classes.addTitle}>Добавить новый тип</div>*/}
+                {/*<div className={classes.add}>*/}
+                {/*    <MyInput placeholder={'Введите название типа'} handler={setType} value={type}/>*/}
+                {/*    <MyButton title={'Добавить'} style={{fontSize: 20, marginLeft: 25}} onClick={addType}/>*/}
+                {/*</div>*/}
+                {/*<div className={classes.addTitle}>Добавить новый бренд</div>*/}
+                {/*<div className={classes.add}>*/}
+                {/*    <MyInput placeholder={'Введите название бренда'} handler={setBrand} value={brand}/>*/}
+                {/*    <MyButton title={'Добавить'} style={{fontSize: 20, marginLeft: 25}} onClick={addBrand}/>*/}
+                {/*</div>*/}
+                {/*<div style={{width: 300, margin: '50px auto 20px auto'}}>*/}
+                {/*    <MyButton onClick={createItem} title={'Добавить товар'} style={{fontSize: 20}}/>*/}
+                {/*</div>*/}
             </div>
-            <div className={classes.createItemSection}>
-                {itemList.map((e) =>
-                    <CreateNewItemModal callback={removeItem} number={e.number} key={e.number}/>
-                )}
-            </div>
+            {/*<div className={classes.createItemSection}>*/}
+            {/*    {itemList.map((e) =>*/}
+            {/*        <CreateNewItemModal callback={removeItem} number={e.number} key={e.number}/>*/}
+            {/*    )}*/}
+            {/*</div>*/}
         </div>
     );
 };

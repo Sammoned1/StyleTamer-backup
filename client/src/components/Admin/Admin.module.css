@@ -2,12 +2,16 @@
     font-family: Montserrat, sans-serif;
 }
 
-.adminModal{
-    height: min-content;
-    width: 600px;
-    background-color: #252525;
-    border-radius: 35px;
-    padding: 20px 40px;
+.adminPage{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.adminContainer{
+    max-width: 1400px;
+    width: 100%;
+    height: auto;
 }
 
 .addTitle{
@@ -17,10 +21,11 @@
 }
 
 .adminTitle{
-    color: white;
-    font-size: 25px;
-    font-weight: bold;
-    margin: 20px 0;
+    font-size: 20px;
+    font-weight: 700;
+    height: 60px;
+    line-height: 60px;
+    margin-bottom: 20px;
 }
 
 .add{
